@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -96,7 +98,7 @@
     <a href=".." title="SMP Documentation" class="md-header__button md-logo" aria-label="SMP Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.46 6.28 11.05 9c-2.58.26-4.55 2.41-4.55 5a5 5 0 0 0 5 5c2.05 0 3.81-1.23 4.58-3H13.5v-2h8v2h-2.25a8.048 8.048 0 0 1-2.46 4h2.71v2h-16v-2h2.71a7.99 7.99 0 0 1-2.71-6c0-3.63 2.46-6.8 5.96-7.72m3.28-4.21.76 1.3.86-.5 3.5 6.06-3.47 2-3.5-6.06.87-.5-.76-1.3 1.74-1Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -214,7 +216,7 @@
     <a href=".." title="SMP Documentation" class="md-nav__button md-logo" aria-label="SMP Documentation" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.46 6.28 11.05 9c-2.58.26-4.55 2.41-4.55 5a5 5 0 0 0 5 5c2.05 0 3.81-1.23 4.58-3H13.5v-2h8v2h-2.25a8.048 8.048 0 0 1-2.46 4h2.71v2h-16v-2h2.71a7.99 7.99 0 0 1-2.71-6c0-3.63 2.46-6.8 5.96-7.72m3.28-4.21.76 1.3.86-.5 3.5 6.06-3.47 2-3.5-6.06.87-.5-.76-1.3 1.74-1Z"/></svg>
 
     </a>
     SMP Documentation
@@ -459,6 +461,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Experimental Setup - Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-measurement-on-a-sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up measurement on a sample
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -569,6 +586,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Experimental Setup - Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#set-up-measurement-on-a-sample" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set up measurement on a sample
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -600,104 +632,138 @@
 <h2 id="experimental-background">Experimental Background</h2>
 <p>The polarisation of a material can be influenced by the presence of an electric field.  When a small perturbation is introduced by this field the permanent dipoles of the system will reorient themselves to align with the field, as this is the lowest energy state.  Once the perturbation is removed the dipoles will relax to their equilibrium state; this relaxation of the macroscopic polarisation is heavily reliant on the underlying microscopic dynamics of the system, and typically follows the same behaviour.  As a result, the dielectric profile of a material can be used to study its relaxation mechanisms.</p>
 <p>The dielectric bridge measures the relaxations through impedance.  A sample is sandwiched between two conducting plates with a surface area A, separated by a distance d; this layout essentially creates a filled capacitor with a complex capacitance given by:</p>
-<p>.. math:: </p>
-<pre><code>C^{*} = \frac{\varepsilon^{*}\varepsilon_{0}A}{d}
-</code></pre>
+<div class="arithmatex">\[ 
+C^{*} = \frac{\varepsilon^{*}\varepsilon_{0}A}{d}
+\]</div>
 <p>Where :math:<code>\varepsilon^{*}</code> is the complex permittivity of the material, and :math:<code>\varepsilon_{0}</code> is the permittivity of free space. A sinusoidally varying voltage is applied to the plates of the form: </p>
-<p>.. math:: </p>
-<pre><code>V(\omega)=V_{0}e^{i\omega t}
-</code></pre>
-<p>This results in a complex current with a phase difference :math:<code>\phi</code> to the voltage, which is measured: </p>
-<p>.. math:: </p>
-<pre><code>I(\omega)=I_{0}e^{i(\omega t+\phi(\omega))}
-</code></pre>
+<p>$$
+    V(\omega)=V_{0}e^{i\omega t}
+$$
+This results in a complex current with a phase difference :math:<code>\phi</code> to the voltage, which is measured: </p>
+<div class="arithmatex">\[
+    I(\omega)=I_{0}e^{i(\omega t+\phi(\omega))}
+\]</div>
 <p>From this we can calculate a complex impedance, using Ohm’s law, that can be related to several material dependent variables (such as complex permittivity).</p>
 <h2 id="sample-preparation">Sample preparation</h2>
 <p>A sample should, generally, be constructed in a similar manner to the diagram below: </p>
-<p>.. figure:: _static/dielectric/sample_diagram_new.png
-    :align: center</p>
+<figure>
+<p><img alt="Sample Diagram" src="../static/dielectric/sample_diagram_new.png" /></p>
+</figure>
 <p>The spacers are usually silicon rods with a 100μm thickness, though different thicknesses may also be used. Different spacer material can also be used; however, the area and capacitance of the spacers need to be considered. </p>
 <p>Plate sizes can also vary; larger plates are usually better for samples with qa weak dielectric signal as a larger area yields a larger signal. </p>
 <p>For more fluid samples, there is a liquid cell as shown below: </p>
-<p>.. figure:: _static/dielectric/liquid_cell.png
-    :align: center</p>
+<figure>
+<p><img alt="Liquid cell" src="../static/dielectric/liquid_cell.png" /></p>
+</figure>
 <h2 id="experimental-setup-software">Experimental Setup - Software</h2>
 <p>The Novocontrol bridge is controlled by the WinDETA software.  There are several steps to prepare an experiment both through the software and the externally connected hardware.</p>
 <p>On the software there are four windows that are useful during the experiment: Status, Message, Multi Graphics and Temperature Log. </p>
-<p>.. figure:: _static/dielectric/window_manager.png
-    :align: center</p>
+<figure>
+<p><img alt="window manager" src="../static/dielectric/window_manager.png" /></p>
+</figure>
 <p>These give useful information about what is going on with the equipment and measurement during a run. The windows can be opened via the <strong>Window</strong> tab as shown above.</p>
 <p>You will need to activate communication between the software and hardware via <strong>Temp. Controller&gt;Initialize WinDETA from controller</strong>.</p>
-<p>.. figure:: _static/dielectric/init_controller.png
-    :align: center
-    :scale: 60%</p>
-<p>Set up measurement on a sample
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+<figure>
+<p><img alt="initialise controller dialogue" src="../static/dielectric/init_controller.png" /></p>
+</figure>
+<h3 id="set-up-measurement-on-a-sample">Set up measurement on a sample</h3>
 <p>Set file names via <strong>File&gt;Set File Names</strong>. This assigns a location where your measurement/data will be stored.</p>
-<p>.. figure:: _static/dielectric/set_file.png
-    :align: center</p>
+<figure>
+<p><img alt="Set file name" src="../static/dielectric/set_file.png" /></p>
+</figure>
 <p>Set sample specifications via <strong>Measure&gt;Sample Specification</strong>. This is where you input details about the thickness, area and spacers. </p>
-<p>.. figure:: _static/dielectric/sample_spec.png
-    :align: center</p>
+<figure>
+<p><img alt="Sample specification" src="../static/dielectric/sample_spec.png" /></p>
+</figure>
 <p>Set the variables you wish to control via <strong>Measure&gt;List Order</strong>. This tells the software what you wish to change (e.g. temperature) and what you are measuring as a function of (e.g. frequency). This will also determine the order in which things are done i.e. whether you measure frequency sweeps at different temperatures or vice versa. </p>
-<p>.. figure:: _static/dielectric/list_order_new.png
-    :align: center</p>
+<figure>
+<p><img alt="Change list order dialogue" src="../static/dielectric/list_order_new.png" /></p>
+</figure>
 <p>Set your temperature and freqency values via <strong>Measure&gt;Value Lists&gt;Temperature (or Frequency)</strong>. This sets the temperatures and frequencies over which you wish to measure.  The machine is capable of a large frequency range; however, frequencies at or around 10\ :sup:<code>7</code> Hz push the limits of the equipment and may not give reliable results.  Conversely, frequencies at 10\ :sup:<code>-2</code>  Hz take a long time to measure and too many of these will increase the run length significantly.  When selecting temperatures, be careful to <strong>select the correct unit</strong>.  The temperature will often depend on the sample itself and what the region of interest is. </p>
-<p>.. figure:: _static/dielectric/variable_lists.png
-    :align: center</p>
+<figure>
+<p><img alt="Variable lists" src="../static/dielectric/variable_lists.png" /></p>
+</figure>
 <p>When the measurement is set up completely, it is best to do a test run via <strong>Measure&gt;Start Single Sweep</strong> to make sure there are no initial issues such as short circuits or poor connections.  Short circuits will appear as very high conductivity with a slope of 1 (this may be difficult to distinguish from samples that simply have a high conductivity such as water-based samples or salts), if this is present and unexpected then there is likely a gap/hole in the sample that means there is direct contact between the electrodes.</p>
 <p>If you wish to perform test measurements (single sweeps) at specific temperatures, the temperature can be controlled manually via <strong>Temp. Controller&gt;Activation</strong>.  A temperature can be set that you wish your sample to reach (<strong>Setpoint</strong>) and the heaters can be activated.</p>
-<p>.. note:: 
-    The sample holder <strong>must</strong> be in the cryostat for the heaters to be able to change the temperature.</p>
-<p>.. figure:: _static/dielectric/temp_control_activation.png
-    :align: center</p>
+<hr />
+<p><strong>Note</strong></p>
+<p>The sample holder <strong>must</strong> be in the cryostat for the heaters to be able to change the temperature.</p>
+<hr />
+<figure>
+<p><img alt="temperature control activation" src="../static/dielectric/temp_control_activation.png" /></p>
+</figure>
 <p>The sample and gas temperature can be monitored both on the <strong>Status</strong> or <strong>Temperature Log</strong> windows and the screen on the dielectric analyser itself. </p>
 <p>Measurements are monitored through the Multi Graphics windows and different parameters can be monitored via <strong>Graphics&gt;Axes Configuration</strong>.</p>
-<p>.. figure:: _static/dielectric/axes_config.png
-    :align: center</p>
+<figure>
+<p><img alt="axes configuration" src="../static/dielectric/axes_config.png" /></p>
+</figure>
 <h2 id="experimental-setup-hardware">Experimental Setup - Hardware</h2>
 <p>The bridge consists of a frequency analyser, a sample cell and a temperature control system (comprising of a cryostat, thermocouples and a liquid nitrogen Dewar).  The sample between the electrodes is mounted in the sample cell, which can be tightened to secure the electrodes.  The sample cell is used to apply the voltage across the sample and measure the resulting current.  The cell is placed in a cryostat during the measurements so that the temperature can be controlled using pressurised nitrogen gas.  There are two heaters, one at the bottom of the Dewar and one between the Dewar and the cryostat, which regulate the gas temperature to control the cell/sample temperature.  The basic Dewar setup and sample cell are shown below.</p>
-<p>.. figure:: _static/dielectric/dewar.png
-    :align: center</p>
-<p>.. figure:: _static/dielectric/sample_cell.png
-    :align: center</p>
+<figure>
+<p><img alt="Dewar" src="../static/dielectric/dewar.png" /></p>
+</figure>
+<figure>
+<p><img alt="sample cell" src="../static/dielectric/sample_cell.png" /></p>
+</figure>
 <p>When securing the sample cell, the sample should be flat and flush against both electrodes and the screw should only need to be finger tight (i.e. not overtightened or tightened with tools).  Tightening and loosening the screw can loosen the electrode connection in contact with the upper electrode (F); when this is too loose or disconnected artefacts will appear in your measurements.  Check that this is secure before running measurements.  If this is not secure, it can be tightened similarly to the mounting screw (B) but should not rotate such that the isolation housing screw (D) rotates with it.  <strong>THE ISOLATION HOUSING SCREW SHOULD NOT BE ROTATED OR MOVED EXCESSIVELY</strong>.  </p>
-<p>.. Setting up a measurement in software
-.. ------------------------------------</p>
-<p>.. 1. Start <strong>WinDeta</strong> (if it isn't already) and navigate to <strong>Temp. Controller</strong>. 
-.. 2. Select <strong>Initialize from Controller</strong>. If this has worked correctly then you should see the temperature of the sample, gas stream and Dewar in the <strong>Status</strong> window. </p>
-<p>.. .. figure:: _static/dielectric/initialize_from.png
-..     :align: center</p>
-<p>.. .. note::
-..     You can choose whatever window placement you like within <strong>WinDeta</strong> but I've found that the most efficient is to tile the <strong>Status</strong>, <strong>Message</strong>, <strong>Temperature Log</strong> and <strong>Online</strong> windows together.</p>
-<p>.. .. figure:: _static/dielectric/Windeta_typical.png
-..     :align: center</p>
-<p>.. 3. Navigate to <strong>File =&gt; Set File Names</strong> (important to change the name of the output file immediately so that you do not overrite someone else's measurement. )
-.. 4. Navigate to <strong>Measurement =&gt; Sample Specification</strong> and enter the required information. The <strong>Description</strong> box should contain information about your zsample (this information will appear at the top of any data you produce). </p>
-<p>.. .. figure:: _static/dielectric/sample_specification.png
-..     :align: center</p>
-<p>.. .. note:: 
-..     The <strong>Sample diameter</strong> and <strong>Sample thickness</strong> (in mm) should also be entered. For standard measurements (i.e. sample between two round electrodes), the <strong>Cell Stray</strong> should be set to <strong>1</strong> and <strong>Spacer Area</strong> can be set to 0. The checkbox for <strong>Use Dielectric Sample Cell</strong> should be checked.</p>
-<p>.. .. figure:: _static/dielectric/sample_diagram.png
-..     :align: center</p>
-<p>.. 5. Go to <strong>Measurement=&gt;List Order</strong>. If you only intend to run the sample at roomtemperature and accurate temperature control is not crucial, then only the ‘Frequency’ variable is required in the ‘Order’ column. If you want to have absolute control of the temperature or if you intend to do a range of temperatures, then the ‘Temperature’ variable should also be added to the ‘Order’ column.</p>
-<p>.. .. figure:: _static/dielectric/list_order.png
-..     :align: center</p>
-<p>.. 6. Navigate to <strong>Value Lists</strong> in order to change the range of the variables (i.e. Temperature and Frequency). The standard frequency range is between 10\ :sup:'−2'\ and 10\ :sup:'7'\ Hz, but this can be changed by editing the value list for frequency. Temperatures can be added as needed to the temperature list. The spectrometer will perform a frequency scan (using the values specified in the frequency value list) at each of these temperatures. <strong>IF YOU INTEND TO USE TEMPERATURES IN KELVIN RATHER THAN CELCIUS MAKE SURE THAT THE TEMPERATURE UNIT BOX IS UNCHECKED</strong>.</p>
-<p>.. .. figure:: _static/dielectric/temp_list.png
-..     :align: center</p>
-<p>.. 7. Start the measurement by navigating to <strong>Measurement=&gt;Start</strong>. </p>
-<p>.. .. note::
-..     If you want to check the signal at a specific temperature, or if the ‘Temperature’ variable has not been added to the ‘List Order’ (i.e. if you intend to only run at one temperature), then you can set the sample temperature manually by navigating to <strong>Temp. Controller=&gt; Activiation</strong>.</p>
-<p>..     .. figure:: _static/dielectric/temp_cont_activation.png
-..         :align: center</p>
-<p>..     From here, you can enter a ‘Setpoint’ and then check ‘Heating On’. This will then heat the sample to the temperature entered as the setpoint. After the temperature has stabilized (you can check this on the ‘Status’ pane), a frequency sweep at that temperature can be started by navigating to <strong>Measurement=&gt;Start Single Sweep</strong>. Bear in mind that every time you do this, WinDeta will save an .eps file so you will need to change the file name (using <strong>File=&gt;Set File Name</strong>) every time you perform a single sweep.</p>
-<p>.. Exporting the data
-.. ------------------</p>
-<p>.. The easiest way to obtain a text file containing the measurement data after a run has been completed is to first load the .eps file into <strong>WinFit</strong>.</p>
-<p>.. Once the file is open in WinFit, navigate to <strong>File=&gt;Save Fit Data As ASCII...</strong>. This will then open a dialogue box from which you can choose which parameters to output to a .txt file.</p>
-<p>.. .. figure:: _static/dielectric/export_ascii.png
-..         :align: center</p>
+<!-- .. Setting up a measurement in software
+.. ------------------------------------
+
+.. 1. Start **WinDeta** (if it isn't already) and navigate to **Temp. Controller**. 
+.. 2. Select **Initialize from Controller**. If this has worked correctly then you should see the temperature of the sample, gas stream and Dewar in the **Status** window. 
+
+.. .. figure:: _static/dielectric/initialize_from.png
+..     :align: center
+
+.. .. note::
+..     You can choose whatever window placement you like within **WinDeta** but I've found that the most efficient is to tile the **Status**, **Message**, **Temperature Log** and **Online** windows together.
+
+.. .. figure:: _static/dielectric/Windeta_typical.png
+..     :align: center
+
+
+.. 3. Navigate to **File => Set File Names** (important to change the name of the output file immediately so that you do not overrite someone else's measurement. )
+.. 4. Navigate to **Measurement => Sample Specification** and enter the required information. The **Description** box should contain information about your zsample (this information will appear at the top of any data you produce). 
+
+.. .. figure:: _static/dielectric/sample_specification.png
+..     :align: center
+
+.. .. note:: 
+..     The **Sample diameter** and **Sample thickness** (in mm) should also be entered. For standard measurements (i.e. sample between two round electrodes), the **Cell Stray** should be set to **1** and **Spacer Area** can be set to 0. The checkbox for **Use Dielectric Sample Cell** should be checked.
+
+.. .. figure:: _static/dielectric/sample_diagram.png
+..     :align: center
+
+.. 5. Go to **Measurement=>List Order**. If you only intend to run the sample at roomtemperature and accurate temperature control is not crucial, then only the ‘Frequency’ variable is required in the ‘Order’ column. If you want to have absolute control of the temperature or if you intend to do a range of temperatures, then the ‘Temperature’ variable should also be added to the ‘Order’ column.
+
+.. .. figure:: _static/dielectric/list_order.png
+..     :align: center
+
+.. 6. Navigate to **Value Lists** in order to change the range of the variables (i.e. Temperature and Frequency). The standard frequency range is between 10\ :sup:'−2'\ and 10\ :sup:'7'\ Hz, but this can be changed by editing the value list for frequency. Temperatures can be added as needed to the temperature list. The spectrometer will perform a frequency scan (using the values specified in the frequency value list) at each of these temperatures. **IF YOU INTEND TO USE TEMPERATURES IN KELVIN RATHER THAN CELCIUS MAKE SURE THAT THE TEMPERATURE UNIT BOX IS UNCHECKED**.
+
+.. .. figure:: _static/dielectric/temp_list.png
+..     :align: center
+
+.. 7. Start the measurement by navigating to **Measurement=>Start**. 
+
+.. .. note::
+..     If you want to check the signal at a specific temperature, or if the ‘Temperature’ variable has not been added to the ‘List Order’ (i.e. if you intend to only run at one temperature), then you can set the sample temperature manually by navigating to **Temp. Controller=> Activiation**.
+
+..     .. figure:: _static/dielectric/temp_cont_activation.png
+..         :align: center
+
+..     From here, you can enter a ‘Setpoint’ and then check ‘Heating On’. This will then heat the sample to the temperature entered as the setpoint. After the temperature has stabilized (you can check this on the ‘Status’ pane), a frequency sweep at that temperature can be started by navigating to **Measurement=>Start Single Sweep**. Bear in mind that every time you do this, WinDeta will save an .eps file so you will need to change the file name (using **File=>Set File Name**) every time you perform a single sweep.
+
+
+.. Exporting the data
+.. ------------------
+
+.. The easiest way to obtain a text file containing the measurement data after a run has been completed is to first load the .eps file into **WinFit**.
+
+.. Once the file is open in WinFit, navigate to **File=>Save Fit Data As ASCII...**. This will then open a dialogue box from which you can choose which parameters to output to a .txt file.
+
+.. .. figure:: _static/dielectric/export_ascii.png
+..         :align: center -->
 
 
 
@@ -740,6 +806,12 @@
     
     
       <script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   </body>
