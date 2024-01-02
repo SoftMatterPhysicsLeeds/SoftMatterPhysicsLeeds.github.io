@@ -12,13 +12,13 @@
         <meta name="author" content="Dan Baker">
       
       
-        <link rel="canonical" href="https://softmatterphysicsleeds.github.io/novocontrol-dielectric/">
+        <link rel="canonical" href="https://softmatterphysicsleeds.github.io/least-squares-fitting/">
       
       
-        <link rel="prev" href="../microscope/">
+        <link rel="prev" href="../git/">
       
       
-        <link rel="next" href="../stelar-ffc/">
+        <link rel="next" href="../microscope/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Novocontrol Dielectric Spectrometer - SMP Documentation</title>
+        <title>Least Squares Fitting - SMP Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#novocontrol-broadband-dielectric-spectrometer" class="md-skip">
+        <a href="#least-squares-fitting" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Novocontrol Dielectric Spectrometer
+              Least Squares Fitting
             
           </span>
         </div>
@@ -354,10 +354,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../least-squares-fitting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Least Squares Fitting
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -366,6 +386,128 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Excel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Excel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-the-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open the data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-fit-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate 'fit' line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate-chi2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculate \(\chi^{2}\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load the 'Solver'
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Origin
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Origin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Manipulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-a-new-fit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining a new fit function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-the-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fit the data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -394,30 +536,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Novocontrol Dielectric Spectrometer
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../novocontrol-dielectric/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -426,77 +548,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#experimental-background" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experimental Background
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sample-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Sample preparation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experimental-setup-software" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experimental Setup - Software
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Experimental Setup - Software">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set-up-measurement-on-a-sample" class="md-nav__link">
-    <span class="md-ellipsis">
-      Set up measurement on a sample
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experimental-setup-hardware" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experimental Setup - Hardware
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -568,37 +619,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#experimental-background" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Experimental Background
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sample-preparation" class="md-nav__link">
+  <a href="#excel" class="md-nav__link">
     <span class="md-ellipsis">
-      Sample preparation
+      Excel
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#experimental-setup-software" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experimental Setup - Software
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Experimental Setup - Software">
+    <nav class="md-nav" aria-label="Excel">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#set-up-measurement-on-a-sample" class="md-nav__link">
+  <a href="#open-the-data" class="md-nav__link">
     <span class="md-ellipsis">
-      Set up measurement on a sample
+      Open the data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-fit-line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate 'fit' line
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate-chi2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculate \(\chi^{2}\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-the-solver" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load the 'Solver'
     </span>
   </a>
   
@@ -610,11 +679,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#experimental-setup-hardware" class="md-nav__link">
+  <a href="#origin" class="md-nav__link">
     <span class="md-ellipsis">
-      Experimental Setup - Hardware
+      Origin
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Origin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Manipulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-a-new-fit-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining a new fit function
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fit-the-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fit the data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -633,143 +735,110 @@
                   
 
 
-<h1 id="novocontrol-broadband-dielectric-spectrometer">Novocontrol Broadband Dielectric Spectrometer</h1>
-<p>Author: Caitlin Probert</p>
-<h2 id="experimental-background">Experimental Background</h2>
-<p>The polarisation of a material can be influenced by the presence of an electric field.  When a small perturbation is introduced by this field the permanent dipoles of the system will reorient themselves to align with the field, as this is the lowest energy state.  Once the perturbation is removed the dipoles will relax to their equilibrium state; this relaxation of the macroscopic polarisation is heavily reliant on the underlying microscopic dynamics of the system, and typically follows the same behaviour.  As a result, the dielectric profile of a material can be used to study its relaxation mechanisms.</p>
-<p>The dielectric bridge measures the relaxations through impedance.  A sample is sandwiched between two conducting plates with a surface area A, separated by a distance d; this layout essentially creates a filled capacitor with a complex capacitance given by:</p>
-<div class="arithmatex">\[ 
-C^{*} = \frac{\varepsilon^{*}\varepsilon_{0}A}{d}
-\]</div>
-<p>Where :math:<code>\varepsilon^{*}</code> is the complex permittivity of the material, and :math:<code>\varepsilon_{0}</code> is the permittivity of free space. A sinusoidally varying voltage is applied to the plates of the form: </p>
-<p>$$
-    V(\omega)=V_{0}e^{i\omega t}
-$$
-This results in a complex current with a phase difference :math:<code>\phi</code> to the voltage, which is measured: </p>
-<div class="arithmatex">\[
-    I(\omega)=I_{0}e^{i(\omega t+\phi(\omega))}
-\]</div>
-<p>From this we can calculate a complex impedance, using Ohm’s law, that can be related to several material dependent variables (such as complex permittivity).</p>
-<h2 id="sample-preparation">Sample preparation</h2>
-<p>A sample should, generally, be constructed in a similar manner to the diagram below: </p>
+<h1 id="least-squares-fitting">Least Squares Fitting</h1>
+<p>Author: Dan Baker</p>
+<h2 id="introduction">Introduction</h2>
+<p>This document will show you how to fit some experimental data with a non-linear function. You can then use these examples to fit your own data by changing the data/function. </p>
+<p>The example data are structural relaxation timescales, <span class="arithmatex">\(\tau_\alpha\)</span>,  as a function of temperature. These data can be well described using the Vogel-Fulcher-Tammann (VFT) equation: </p>
+<div class="arithmatex">\[\begin{equation}
+    \tau_\alpha = \tau_{0}e^{\frac{DT_{0}}{T-T_{0}}}
+    \label{eq:VFT}
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(\tau_0\)</span> is a typical timescale for molecular motion at high temperature (usually <span class="arithmatex">\(10^{-14} - 10^{-12}\)</span>s), <span class="arithmatex">\(D\)</span> is the 'strength' parameter (analogous to the inverse of fragility), and <span class="arithmatex">\(T_0\)</span> is an 'ideal' glass transition temperature. To prevent the fit routine being biased towards larger values of <span class="arithmatex">\(\tau_\alpha\)</span> (as the functional form is exponential) it is often better to fit the logarithm of this equation to the logarithm of the data. In base 10 (for fun): </p>
+<div class="arithmatex">\[\begin{equation}
+    \mathrm{log}_{10}\left(\tau_\alpha\right) = \mathrm{log}_{10}\left(\tau_{0}\right) + \frac{\mathrm{log}_{10}\left(e^{1}\right)DT_{0}}{T-T_{0}}
+    \label{eq:VFT_logged}
+\end{equation}\]</div>
+<h2 id="excel">Excel</h2>
+<h3 id="open-the-data">Open the data</h3>
+<p>Load the data (copy/paste, open .txt file, whatever) into <strong>Excel</strong>:</p>
 <figure>
-<p><img alt="Sample Diagram" src="../static/dielectric/sample_diagram_new.png" /></p>
+<p><img alt="Excel load data" src="../static/least-squares/Excel%20Images/load_data_excel.PNG" /></p>
 </figure>
-<p>The spacers are usually silicon rods with a 100μm thickness, though different thicknesses may also be used. Different spacer material can also be used; however, the area and capacitance of the spacers need to be considered. </p>
-<p>Plate sizes can also vary; larger plates are usually better for samples with qa weak dielectric signal as a larger area yields a larger signal. </p>
-<p>For more fluid samples, there is a liquid cell as shown below: </p>
+<h3 id="generate-fit-line">Generate 'fit' line</h3>
+<p>Generate data based on the function that you want to fit. In this case, I have generated data based on equation \ref{eq:VFT_logged}, using column B as input for T (so that the generated fit values are of the same length as the experimental <span class="arithmatex">\(\tau_\alpha\)</span> data) and the cells K3, K4 and K5 as the parameters <span class="arithmatex">\(\mathrm{log}_{10}(\tau_0)\)</span>, <span class="arithmatex">\(D\)</span> and <span class="arithmatex">\(T_0\)</span>.</p>
 <figure>
-<p><img alt="Liquid cell" src="../static/dielectric/liquid_cell.png" /></p>
+<p><img alt="generate fit line excel" src="../static/least-squares/Excel%20Images/generate_fit_line_excel.PNG" /></p>
 </figure>
-<h2 id="experimental-setup-software">Experimental Setup - Software</h2>
-<p>The Novocontrol bridge is controlled by the WinDETA software.  There are several steps to prepare an experiment both through the software and the externally connected hardware.</p>
-<p>On the software there are four windows that are useful during the experiment: Status, Message, Multi Graphics and Temperature Log. </p>
+<h3 id="calculate-chi2">Calculate <span class="arithmatex">\(\chi^{2}\)</span></h3>
+<p>Find the difference between the experimental data and the generated fit line, squared (<span class="arithmatex">\(\chi^2\)</span>) and then sum this column. We will do our least squares minimisation on this sum through variation of the fit parameters <span class="arithmatex">\(\mathrm{log}_{10}(\tau_0)\)</span>, <span class="arithmatex">\(D\)</span> and <span class="arithmatex">\(T_0\)</span>. At this point it's a good idea to plot the experimental data and the fit line so that we have a graphical representation of whether the fit routine gives us a good solution:</p>
 <figure>
-<p><img alt="window manager" src="../static/dielectric/window_manager.png" /></p>
+<p><img alt="chi squared graph excel" src="../static/least-squares/Excel%20Images/chisqaured_graph_excel.PNG" /></p>
 </figure>
-<p>These give useful information about what is going on with the equipment and measurement during a run. The windows can be opened via the <strong>Window</strong> tab as shown above.</p>
-<p>You will need to activate communication between the software and hardware via <strong>Temp. Controller&gt;Initialize WinDETA from controller</strong>.</p>
+<h3 id="load-the-solver">Load the 'Solver'</h3>
+<p>Load the <strong>Excel</strong> Solver Add-in by clicking on the Data tab and selecting solver (should be on the very right hand side of the ribbon. If you can't see the `Solver' button then you need to enable it by following these <a href="https://support.microsoft.com/en-us/office/load-the-solver-add-in-in-excel-612926fc-d53b-46b4-872c-e24772f078ca">instructions</a>). </p>
 <figure>
-<p><img alt="initialise controller dialogue" src="../static/dielectric/init_controller.png" /></p>
+<p><img alt="excel solver" src="../static/least-squares/Excel%20Images/excel_solver.PNG" /></p>
 </figure>
-<h3 id="set-up-measurement-on-a-sample">Set up measurement on a sample</h3>
-<p>Set file names via <strong>File&gt;Set File Names</strong>. This assigns a location where your measurement/data will be stored.</p>
+<ul>
+<li>'Set Objective' should be the cell containing the sum of the <span class="arithmatex">\(\chi^2\)</span> column</li>
+<li>'To' should be 'Min' (we want to minimise the sum of <span class="arithmatex">\(\chi^2\)</span> because <span class="arithmatex">\(\chi^2\)</span> is the difference between our experimental data and our fit line and so the smaller this difference, the better the fit). </li>
+<li>'By Changing Variable Cells' should be set to our fit parameters (these will be changed in order to minimise the sum of <span class="arithmatex">\(\chi^2\)</span>).</li>
+<li>'Make Unconstrained Variables Non-Negative' should be unticked in this case (since <span class="arithmatex">\(\mathrm{log}_{10}(\tau_0)\)</span> will probably be negative).</li>
+<li>Click 'Solve'</li>
+</ul>
+<p>After the solver has finished, the 'Solver Results' window should appear. In the ideal case, the fit line should now go through the points and the fit parameter cells should contain the updated fit parameters. If you're happy this is the case, make sure 'Keep Solver Solution' is selected and click `OK' to keep the parameters.</p>
 <figure>
-<p><img alt="Set file name" src="../static/dielectric/set_file.png" /></p>
+<p><img alt="excel solver complete" src="../static/least-squares/Excel%20Images/solver_complete_excel.PNG" /></p>
 </figure>
-<p>Set sample specifications via <strong>Measure&gt;Sample Specification</strong>. This is where you input details about the thickness, area and spacers. </p>
+<h2 id="origin">Origin</h2>
+<h3 id="data-manipulation">Data Manipulation</h3>
+<p>First of all, load the data into <strong>Origin</strong>. At this stage we just need the <span class="arithmatex">\(T\)</span> values and the <span class="arithmatex">\(\tau_\alpha\)</span> data as they come out:</p>
 <figure>
-<p><img alt="Sample specification" src="../static/dielectric/sample_spec.png" /></p>
+<p><img alt="origin load data" src="../static/least-squares/Origin%20Images/Loaddata-1.png" /></p>
 </figure>
-<p>Set the variables you wish to control via <strong>Measure&gt;List Order</strong>. This tells the software what you wish to change (e.g. temperature) and what you are measuring as a function of (e.g. frequency). This will also determine the order in which things are done i.e. whether you measure frequency sweeps at different temperatures or vice versa. </p>
+<p>Then, calculate the logarithm of the <span class="arithmatex">\(\tau_\alpha\)</span> values in a separate column:</p>
 <figure>
-<p><img alt="Change list order dialogue" src="../static/dielectric/list_order_new.png" /></p>
+<p><img alt="origin log data" src="../static/least-squares/Origin%20Images/log_data-1.png" /></p>
 </figure>
-<p>Set your temperature and freqency values via <strong>Measure&gt;Value Lists&gt;Temperature (or Frequency)</strong>. This sets the temperatures and frequencies over which you wish to measure.  The machine is capable of a large frequency range; however, frequencies at or around 10<sup>7</sup> Hz push the limits of the equipment and may not give reliable results.  Conversely, frequencies at 10<sup>-2</sup>  Hz take a long time to measure and too many of these will increase the run length significantly.  When selecting temperatures, be careful to <strong>select the correct unit</strong>.  The temperature will often depend on the sample itself and what the region of interest is. </p>
+<p>A plot of <span class="arithmatex">\(\mathrm{log}_{10}(\tau_\alpha)\)</span> vs <span class="arithmatex">\(T\)</span> will look like:</p>
 <figure>
-<p><img alt="Variable lists" src="../static/dielectric/variable_lists.png" /></p>
+<p><img alt="origin plot initial" src="../static/least-squares/Origin%20Images/plot_initial-1.png" /></p>
 </figure>
-<p>When the measurement is set up completely, it is best to do a test run via <strong>Measure&gt;Start Single Sweep</strong> to make sure there are no initial issues such as short circuits or poor connections.  Short circuits will appear as very high conductivity with a slope of 1 (this may be difficult to distinguish from samples that simply have a high conductivity such as water-based samples or salts), if this is present and unexpected then there is likely a gap/hole in the sample that means there is direct contact between the electrodes.</p>
-<p>If you wish to perform test measurements (single sweeps) at specific temperatures, the temperature can be controlled manually via <strong>Temp. Controller&gt;Activation</strong>.  A temperature can be set that you wish your sample to reach (<strong>Setpoint</strong>) and the heaters can be activated.</p>
-<hr />
-<p><strong>Note</strong></p>
-<p>The sample holder <strong>must</strong> be in the cryostat for the heaters to be able to change the temperature.</p>
-<hr />
+<h3 id="defining-a-new-fit-function">Defining a new fit function</h3>
+<p>The data are clearly non-linear and so we'd like to fit them using a non-linear curve fitting routine. Click on 'Analysis' <span class="arithmatex">\(\rightarrow\)</span> 'Fitting' <span class="arithmatex">\(\rightarrow\)</span> 'Nonlinear Curve Fit':</p>
 <figure>
-<p><img alt="temperature control activation" src="../static/dielectric/temp_control_activation.png" /></p>
+<p><img alt="origin analysis fit menu" src="../static/least-squares/Origin%20Images/Analysis_fit_menu-1.png" /></p>
 </figure>
-<p>The sample and gas temperature can be monitored both on the <strong>Status</strong> or <strong>Temperature Log</strong> windows and the screen on the dielectric analyser itself. </p>
-<p>Measurements are monitored through the Multi Graphics windows and different parameters can be monitored via <strong>Graphics&gt;Axes Configuration</strong>.</p>
+<p>On the window that pops up ('NLfit()') click on the 'Category' dropdown and select 'New...'</p>
 <figure>
-<p><img alt="axes configuration" src="../static/dielectric/axes_config.png" /></p>
+<p><img alt="origin NL fit menu" src="../static/least-squares/Origin%20Images/NLfitmenu-1.png" /></p>
 </figure>
-<h2 id="experimental-setup-hardware">Experimental Setup - Hardware</h2>
-<p>The bridge consists of a frequency analyser, a sample cell and a temperature control system (comprising of a cryostat, thermocouples and a liquid nitrogen Dewar).  The sample between the electrodes is mounted in the sample cell, which can be tightened to secure the electrodes.  The sample cell is used to apply the voltage across the sample and measure the resulting current.  The cell is placed in a cryostat during the measurements so that the temperature can be controlled using pressurised nitrogen gas.  There are two heaters, one at the bottom of the Dewar and one between the Dewar and the cryostat, which regulate the gas temperature to control the cell/sample temperature.  The basic Dewar setup and sample cell are shown below.</p>
+<p>A popup window will ask you to name your new category of functions, so give it a name. Next, click on the dropdown next to 'function' and select `new' again...</p>
 <figure>
-<p><img alt="Dewar" src="../static/dielectric/dewar.png" /></p>
+<p><img alt="origin new function" src="../static/least-squares/Origin%20Images/new_function-1.png" /></p>
 </figure>
+<p>Name the function something and then click `Next'...</p>
 <figure>
-<p><img alt="sample cell" src="../static/dielectric/sample_cell.png" /></p>
+<p><img alt="origin new function name" src="../static/least-squares/Origin%20Images/new_function_name-1.png" /></p>
 </figure>
-<p>When securing the sample cell, the sample should be flat and flush against both electrodes and the screw should only need to be finger tight (i.e. not overtightened or tightened with tools).  Tightening and loosening the screw can loosen the electrode connection in contact with the upper electrode (F); when this is too loose or disconnected artefacts will appear in your measurements.  Check that this is secure before running measurements.  If this is not secure, it can be tightened similarly to the mounting screw (B) but should not rotate such that the isolation housing screw (D) rotates with it.  <strong>THE ISOLATION HOUSING SCREW SHOULD NOT BE ROTATED OR MOVED EXCESSIVELY</strong>.  </p>
-<!-- .. Setting up a measurement in software
-.. ------------------------------------
-
-.. 1. Start **WinDeta** (if it isn't already) and navigate to **Temp. Controller**. 
-.. 2. Select **Initialize from Controller**. If this has worked correctly then you should see the temperature of the sample, gas stream and Dewar in the **Status** window. 
-
-.. .. figure:: _static/dielectric/initialize_from.png
-..     :align: center
-
-.. .. note::
-..     You can choose whatever window placement you like within **WinDeta** but I've found that the most efficient is to tile the **Status**, **Message**, **Temperature Log** and **Online** windows together.
-
-.. .. figure:: _static/dielectric/Windeta_typical.png
-..     :align: center
-
-
-.. 3. Navigate to **File => Set File Names** (important to change the name of the output file immediately so that you do not overrite someone else's measurement. )
-.. 4. Navigate to **Measurement => Sample Specification** and enter the required information. The **Description** box should contain information about your zsample (this information will appear at the top of any data you produce). 
-
-.. .. figure:: _static/dielectric/sample_specification.png
-..     :align: center
-
-.. .. note:: 
-..     The **Sample diameter** and **Sample thickness** (in mm) should also be entered. For standard measurements (i.e. sample between two round electrodes), the **Cell Stray** should be set to **1** and **Spacer Area** can be set to 0. The checkbox for **Use Dielectric Sample Cell** should be checked.
-
-.. .. figure:: _static/dielectric/sample_diagram.png
-..     :align: center
-
-.. 5. Go to **Measurement=>List Order**. If you only intend to run the sample at roomtemperature and accurate temperature control is not crucial, then only the ‘Frequency’ variable is required in the ‘Order’ column. If you want to have absolute control of the temperature or if you intend to do a range of temperatures, then the ‘Temperature’ variable should also be added to the ‘Order’ column.
-
-.. .. figure:: _static/dielectric/list_order.png
-..     :align: center
-
-.. 6. Navigate to **Value Lists** in order to change the range of the variables (i.e. Temperature and Frequency). The standard frequency range is between 10\ :sup:'−2'\ and 10\ :sup:'7'\ Hz, but this can be changed by editing the value list for frequency. Temperatures can be added as needed to the temperature list. The spectrometer will perform a frequency scan (using the values specified in the frequency value list) at each of these temperatures. **IF YOU INTEND TO USE TEMPERATURES IN KELVIN RATHER THAN CELCIUS MAKE SURE THAT THE TEMPERATURE UNIT BOX IS UNCHECKED**.
-
-.. .. figure:: _static/dielectric/temp_list.png
-..     :align: center
-
-.. 7. Start the measurement by navigating to **Measurement=>Start**. 
-
-.. .. note::
-..     If you want to check the signal at a specific temperature, or if the ‘Temperature’ variable has not been added to the ‘List Order’ (i.e. if you intend to only run at one temperature), then you can set the sample temperature manually by navigating to **Temp. Controller=> Activiation**.
-
-..     .. figure:: _static/dielectric/temp_cont_activation.png
-..         :align: center
-
-..     From here, you can enter a ‘Setpoint’ and then check ‘Heating On’. This will then heat the sample to the temperature entered as the setpoint. After the temperature has stabilized (you can check this on the ‘Status’ pane), a frequency sweep at that temperature can be started by navigating to **Measurement=>Start Single Sweep**. Bear in mind that every time you do this, WinDeta will save an .eps file so you will need to change the file name (using **File=>Set File Name**) every time you perform a single sweep.
-
-
-.. Exporting the data
-.. ------------------
-
-.. The easiest way to obtain a text file containing the measurement data after a run has been completed is to first load the .eps file into **WinFit**.
-
-.. Once the file is open in WinFit, navigate to **File=>Save Fit Data As ASCII...**. This will then open a dialogue box from which you can choose which parameters to output to a .txt file.
-
-.. .. figure:: _static/dielectric/export_ascii.png
-..         :align: center -->
+<p>On the next screen you can set up the parameters. Here, <span class="arithmatex">\(T\)</span> is the independent variable, <span class="arithmatex">\(\tau\)</span> is the dependent variable and the equation has 3 free parameters, <span class="arithmatex">\(\tau_0\)</span>, <span class="arithmatex">\(D\)</span> and <span class="arithmatex">\(T_0\)</span>, which will be varied in the fitting routine. You can call these what you want, of course! It's worth mentioning again at this point that the values of <span class="arithmatex">\(\tau\)</span> and <span class="arithmatex">\(\tau_0\)</span> will be the 'logged' values but more on that in a sec... After all looks good, click 'Next'.</p>
+<figure>
+<p><img alt="orign param names" src="../static/least-squares/Origin%20Images/function_parameter_names-1.png" /></p>
+</figure>
+<p>In the next window, the first thing to set is the inital values for the varying parameters. By default, these are set to '1': if you try and fit without setting 'sensible' values here then the fit will not converge. A sensible region for <span class="arithmatex">\(\tau_0\)</span> is somewhere in the region of <span class="arithmatex">\(10^{-12}\)</span> to <span class="arithmatex">\(10^{-14}\)</span> and so, as we're dealing with the 'logged' value I have set the initial value of <span class="arithmatex">\(\tau_0\)</span> to -12. The <span class="arithmatex">\(D\)</span> parameter, also known as the 'strength' parameter, basically sets the rate at which the VFT equation tends to infinity and the temperature <span class="arithmatex">\(T_0\)</span> is the temperature at which this occurs. Setting <span class="arithmatex">\(D\)</span> to some integer value between 2 and 10 and <span class="arithmatex">\(T_0\)</span> to a `sensible' temperature is usually good enough. Here, I've set <span class="arithmatex">\(D\)</span> to 5 and <span class="arithmatex">\(T_0\)</span> to 100K (remember to work in Kelvin).</p>
+<p>Once these initial parameter values have been set, you can enter the equation in the textbox below. Note that, because I've chosen to work in base 10 logarithm, I have to include a <span class="arithmatex">\(\mathrm{log}_{10}(e^{1})\)</span> term... Click on the 'quick check' button and make sure that it spits a result out. If all looks good, click `Next'.</p>
+<figure>
+<p><img alt="origin equation def" src="../static/least-squares/Origin%20Images/equation_def-1.png" /></p>
+</figure>
+<p>Just click `Next' through the next screen...</p>
+<figure>
+<p><img alt="origin init" src="../static/least-squares/Origin%20Images/init-1.png" /></p>
+</figure>
+<p>On the next screen you can set upper and lower bounds for the parameters. This isn't usually necessary for the VFT equation to work (if the initial parameter guesses aren't insane) so I've left these blank in this example... There are two more screens after this one that are not required for this exercise so now just click 'Finish' to get back to the NLFit() window.</p>
+<figure>
+<p><img alt="origin bounds" src="../static/least-squares/Origin%20Images/bounds-1.png" /></p>
+</figure>
+<h3 id="fit-the-data">Fit the data</h3>
+<p>The NLfit() window will complain that you haven't selected any data, which, to be fair, we haven't. In order to select the data, click 'Data Selection' on the left hand side, press the 'plus' button next to 'Input Data' and click the arrow on the right hand side on the 'Range 1' line. Select the logged <span class="arithmatex">\(\tau_{\alpha}\)</span> data. If all goes well in this step there should be a graph on the bottom left with the data and a red fit line, which is just the VFT equation using the initial parameters. After this, click 'Fit' (optional: cross fingers).</p>
+<figure>
+<p><img alt="select data" src="../static/least-squares/Origin%20Images/select_data-1.png" /></p>
+</figure>
+<p>A popup will ask whether you want to 'see the report'. Click 'Yes' and something that looks like this, with the optimised parameters, their errors and a nice graph with a line through the points (hopefully): </p>
+<figure>
+<p><img alt="origin fit report" src="../static/least-squares/Origin%20Images/report-1.png" /></p>
+</figure>
+<p>The <span class="arithmatex">\(\alpha\)</span> relaxation timescales fitted with the VFT equation are usually plotted in an 'Arrhenius manner' i.e. against <span class="arithmatex">\(1000/T\)</span>. Luckily, the 'fit line' data is available by clicking the tab at the bottom of the 'Book' window and will be called something like 'FitNLCurve1'. You can then replot this data with your <span class="arithmatex">\(\tau_\alpha\)</span> data against <span class="arithmatex">\(1000/T\)</span> instead.</p>
 
 
 
