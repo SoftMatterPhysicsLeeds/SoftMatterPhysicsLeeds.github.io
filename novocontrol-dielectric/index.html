@@ -691,10 +691,10 @@ This results in a complex current with a phase difference :math:<code>\phi</code
 </figure>
 <p>When the measurement is set up completely, it is best to do a test run via <strong>Measure&gt;Start Single Sweep</strong> to make sure there are no initial issues such as short circuits or poor connections.  Short circuits will appear as very high conductivity with a slope of 1 (this may be difficult to distinguish from samples that simply have a high conductivity such as water-based samples or salts), if this is present and unexpected then there is likely a gap/hole in the sample that means there is direct contact between the electrodes.</p>
 <p>If you wish to perform test measurements (single sweeps) at specific temperatures, the temperature can be controlled manually via <strong>Temp. Controller&gt;Activation</strong>.  A temperature can be set that you wish your sample to reach (<strong>Setpoint</strong>) and the heaters can be activated.</p>
-<hr />
-<p><strong>Note</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>The sample holder <strong>must</strong> be in the cryostat for the heaters to be able to change the temperature.</p>
-<hr />
+</div>
 <figure>
 <p><img alt="temperature control activation" src="../static/dielectric/temp_control_activation.png" /></p>
 </figure>
@@ -711,7 +711,11 @@ This results in a complex current with a phase difference :math:<code>\phi</code
 <figure>
 <p><img alt="sample cell" src="../static/dielectric/sample_cell.png" /></p>
 </figure>
-<p>When securing the sample cell, the sample should be flat and flush against both electrodes and the screw should only need to be finger tight (i.e. not overtightened or tightened with tools).  Tightening and loosening the screw can loosen the electrode connection in contact with the upper electrode (F); when this is too loose or disconnected artefacts will appear in your measurements.  Check that this is secure before running measurements.  If this is not secure, it can be tightened similarly to the mounting screw (B) but should not rotate such that the isolation housing screw (D) rotates with it.  <strong>THE ISOLATION HOUSING SCREW SHOULD NOT BE ROTATED OR MOVED EXCESSIVELY</strong>.  </p>
+<p>When securing the sample cell, the sample should be flat and flush against both electrodes and the screw should only need to be finger tight (i.e. not overtightened or tightened with tools).  Tightening and loosening the screw can loosen the electrode connection in contact with the upper electrode (F); when this is too loose or disconnected artefacts will appear in your measurements.  Check that this is secure before running measurements.  If this is not secure, it can be tightened similarly to the mounting screw (B) but should not rotate such that the isolation housing screw (D) rotates with it.  </p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>THE ISOLATION HOUSING SCREW SHOULD NOT BE ROTATED OR MOVED EXCESSIVELY</strong>.  </p>
+</div>
 <!-- .. Setting up a measurement in software
 .. ------------------------------------
 
