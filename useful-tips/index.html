@@ -12,13 +12,13 @@
         <meta name="author" content="Dan Baker">
       
       
-        <link rel="canonical" href="https://softmatterphysicsleeds.github.io/booking-system/">
+        <link rel="canonical" href="https://softmatterphysicsleeds.github.io/useful-tips/">
       
       
-        <link rel="prev" href="../anton-paar/">
+        <link rel="prev" href="../universal-analysis/">
       
       
-        <link rel="next" href="../bruker-nmr-diffusion/">
+        <link rel="next" href="../vacuum-ovens/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Booking System - SMP Documentation</title>
+        <title>Useful Tips - SMP Documentation</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#smp-booking-system-instructions" class="md-skip">
+        <a href="#useful-tips" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Booking System
+              Useful Tips
             
           </span>
         </div>
@@ -296,19 +296,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../booking-system/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -317,7 +308,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -528,10 +518,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../useful-tips/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Useful Tips
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -540,6 +550,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#making-an-icon-from-a-png" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making an icon from a .png
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -586,6 +625,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#making-an-icon-from-a-png" class="md-nav__link">
+    <span class="md-ellipsis">
+      Making an icon from a .png
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -599,28 +655,11 @@
                   
 
 
-<h1 id="smp-booking-system-instructions">SMP Booking System Instructions</h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you cannot log in to the booking system, you probably need to be added: send me (Dan) an email!</p>
-</div>
-<ol>
-<li>
-<p>Login to the website at the following address: phylinvm2.leeds.ac.uk using your normal I.T. account details (need to use university networked PC or remote desktop – webversion is at https://vwd.leeds.ac.uk).</p>
-</li>
-<li>
-<p>Click on ‘My Account’ on the right hand side, scroll down to the bottom and click ‘confirm’ next to a bit of kit in the table.</p>
-</li>
-<li>
-<p>This will take you to a screen that has a tick box to show you have read the risk assessment (tick it) and then you should click okay/confirm at the bottom.</p>
-</li>
-<li>
-<p>You can now book a slot on that bit of equipment; go to the ‘Schedules’ tab at the top, scroll down to the thing you want to book, click on a slot and select your name from the dropdown box.</p>
-</li>
-<li>
-<p>If you want to delete a booking, click on your name and select ‘delete’ from the dropdown box.</p>
-</li>
-</ol>
+<h1 id="useful-tips">Useful Tips</h1>
+<h2 id="making-an-icon-from-a-png">Making an icon from a .png</h2>
+<p>First, use an image editor (e.g. Inkscape) make a square image that's at least 256x256px. Then, using <a href="https://imagemagick.org/index.php">Image Magick</a>: </p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>magick<span class="w"> </span>your_image.png<span class="w"> </span>-define<span class="w"> </span>icon:auto-resize<span class="o">=</span><span class="m">256</span>,128,48,32,16<span class="w"> </span>your_icon.ico
+</span></code></pre></div>
 
 
 
