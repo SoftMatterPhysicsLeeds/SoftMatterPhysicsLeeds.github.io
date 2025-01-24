@@ -576,19 +576,70 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-spyder" class="md-nav__link">
+  <a href="#spyder" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing Spyder
+      Spyder
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installing Spyder">
+    <nav class="md-nav" aria-label="Spyder">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#making-a-shortcut-to-spyder" class="md-nav__link">
     <span class="md-ellipsis">
       Making a shortcut to Spyder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      VSCode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VSCode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-a-py-file-using-a-venv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing a .py file using a venv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-a-ipynb-jupyter-notebook-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing a .ipynb (Jupyter notebook) file
     </span>
   </a>
   
@@ -789,19 +840,70 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-spyder" class="md-nav__link">
+  <a href="#spyder" class="md-nav__link">
     <span class="md-ellipsis">
-      Installing Spyder
+      Spyder
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installing Spyder">
+    <nav class="md-nav" aria-label="Spyder">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#making-a-shortcut-to-spyder" class="md-nav__link">
     <span class="md-ellipsis">
       Making a shortcut to Spyder
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vscode" class="md-nav__link">
+    <span class="md-ellipsis">
+      VSCode
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VSCode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-a-py-file-using-a-venv" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing a .py file using a venv
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-a-ipynb-jupyter-notebook-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing a .ipynb (Jupyter notebook) file
     </span>
   </a>
   
@@ -892,7 +994,7 @@
 </span></code></pre></div>
 </li>
 </ol>
-<h2 id="installing-spyder">Installing Spyder</h2>
+<h2 id="spyder">Spyder</h2>
 <ol>
 <li>
 <p>First activate the virtual environment you want to install Spyder in. For this example, I will be installing it in the 'analysis' venv we made before:</p>
@@ -918,7 +1020,7 @@ If this is succesful, the venv name will appear in brackets at the beginning of 
 </span></code></pre></div>
 <p>Make sure to change the path to the 'python.exe' to the one that matches the environment you installed Spyder in! 
 Save this file as "spyder.bat" (you can name it whatever you like, but you need to save it as a .bat). Double click on the file in file explorer, and Spyder will open! </p>
-<p>We can turn out .bat into a Desktop Shortcut by right clicking it and selecting "Send to - Desktop (create shortcut)". You can then change the icon of this shortcut by right clicking it, clicking 'Properties' and selecting 'Change Icon'.</p>
+<p>We can turn our .bat into a Desktop Shortcut by right clicking it and selecting "Send to - Desktop (create shortcut)". You can then change the icon of this shortcut by right clicking it, clicking 'Properties' and selecting 'Change Icon'.</p>
 <figure>
 <p><img alt="change icon" src="../static/python/change_icon.png" /></p>
 </figure>
@@ -926,6 +1028,45 @@ Save this file as "spyder.bat" (you can name it whatever you like, but you need 
 <figure>
 <p><img alt="change icon" src="../static/python/icon.png" /></p>
 </figure>
+<h2 id="vscode">VSCode</h2>
+<h3 id="installation">Installation</h3>
+<p>Go to the <a href="https://code.visualstudio.com/" target="_blank">VSCode Website</a> and click 'Download for Windows'. Double click the installer, and install! It's a good idea to tick the box(es) to add 'Open with Code' to File Explorer. </p>
+<h3 id="extensions">Extensions</h3>
+<p>For working with Python files, I would recommend the following extensions: </p>
+<ul>
+<li>Python</li>
+<li>Jupyter</li>
+<li>Error Lens</li>
+<li>Data Wrangler (requires Pandas)</li>
+</ul>
+<h3 id="editing-a-py-file-using-a-venv">Editing a .py file using a venv</h3>
+<ol>
+<li>Make a folder for analysis, or navigate to a pre-existing folder.</li>
+<li>Open VScode at that location by either a) right clicking in the folder in File Explorer and selecting 'Open with Code' or b) navigating to the folder in Powershell and typing <code>code .</code>.</li>
+<li>Make a new .py in the folder by clicking the new file button in the explorer pane.
+    <figure markdown>
+    <img alt="new file button in VScode" src="../static/python/new_file.png" />
+    </figure markdown></li>
+<li>
+<p>In the bottom right of the editor, next to where it says 'Python' click on the version number that's displayed and choose the environment that you actually want (it will try and do this for you...)
+    <figure markdown>
+    <img alt="select interpreter" src="../static/python/select_interpreter.png" />
+    </figure markdown></p>
+<p><figure markdown>
+<img alt="select interpreter" src="../static/python/find_interpreter.png" />
+</figure markdown></p>
+<p><figure markdown>
+<img alt="select interpreter" src="../static/python/findpython.png" />
+</figure markdown></p>
+</li>
+</ol>
+<h3 id="editing-a-ipynb-jupyter-notebook-file">Editing a .ipynb (Jupyter notebook) file</h3>
+<ol>
+<li>Once you have made a .py file and chosen the correct interpreter (with Jupyter installed in the environment), make a new file with the '.ipynb' extension.</li>
+<li>Click 'Select Kernel' in the top right of the editor. </li>
+<li>Choose 'Python Environments'</li>
+<li>Choose the same environment that we chose for the .py file. </li>
+</ol>
 
 
 
