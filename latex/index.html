@@ -516,6 +516,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       References
@@ -794,6 +803,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       References
@@ -911,6 +929,74 @@
 <p>To refer to the figure in the main text, we use the <code>\ref</code> command. For example: </p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Figure <span class="k">\ref</span><span class="nb">{</span>fig:sample<span class="nb">_</span>cell<span class="nb">}</span> is a schematic of the sample cell for the Novocontrol dielectric spectrometer.  
 </span></code></pre></div>
+<h2 id="tables">Tables</h2>
+<p>To add a table, we can use the - you guessed it - 'Table' environment: </p>
+<p><div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[]
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="k">\centering</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>c|c<span class="nb">}</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>         <span class="nb">&amp;</span>  <span class="k">\\</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>         <span class="nb">&amp;</span> 
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="k">\caption</span><span class="nb">{</span>Caption<span class="nb">}</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="k">\label</span><span class="nb">{</span>tab:my<span class="nb">_</span>label<span class="nb">}</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</span></code></pre></div>
+- The <code>\begin{table}</code> and <code>\end{table}</code> lines denote the beginning and end of the figure environment. 
+- <code>\centering</code> centers the figure relative to the page.
+- The actual table is rendered within the 'tabular' block (between <code>\begin{tabular}</code> and <code>\end{tabular}</code>). The second set of <code>{}</code> after <code>\begin{tabular}</code> are used to specify the number of columns and how the text within those columns is aligned e.g. <code>{c|c}</code> means two columns with a single vertical line between with the text centered in each column. 
+- Values are added to the table using <code>&amp;</code> between columns. The end of a row is denoted by <code>\\</code>
+- <code>\caption</code> sets the text which will be displayed under the table. This will display as "Table X: Caption Text", where X is the table number relative to the other tables in the document.
+- <code>\label</code> allows us to refer to this table in the text. </p>
+<p>Let's imagine we have a set of Young's moduli data for some composite samples and we'd like to add this to a report:</p>
+<figure>
+<p><img alt="example table Excel" src="../static/latex/example_table.png" /></p>
+</figure>
+<p>So, we need a table with 6 columns and fill it up with data. We'd also like to:</p>
+<ol>
+<li>Have the column headings in bold.</li>
+<li>Have a horzontal line separating the column headings from the data.</li>
+<li>Have the 'Average' and 'Standard Error' values for each 'orientation' span 3 rows (to centre them within the three rows that they refer to).</li>
+</ol>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">\begin</span><span class="nb">{</span>table<span class="nb">}</span>[]
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">\centering</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>|c|c|c|c|c|c|<span class="nb">}</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        <span class="k">\hline</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="nb">&amp;&amp;&amp;&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="k">\textbf</span><span class="nb">{</span>Orientation<span class="nb">}</span> <span class="nb">&amp;</span> <span class="k">\textbf</span><span class="nb">{</span>Sample 1<span class="nb">}</span> <span class="nb">&amp;</span> <span class="k">\textbf</span><span class="nb">{</span>Sample 2<span class="nb">}</span> <span class="nb">&amp;</span> <span class="k">\textbf</span><span class="nb">{</span>Sample 3<span class="nb">}</span> <span class="nb">&amp;</span> <span class="k">\textbf</span><span class="nb">{</span>Average<span class="nb">}</span> <span class="nb">&amp;</span> <span class="k">\textbf</span><span class="nb">{</span>Standard Error<span class="nb">}</span>  <span class="k">\\</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="nb">&amp;</span><span class="k">\textbf</span><span class="nb">{</span>(GPa)<span class="nb">}&amp;</span><span class="k">\textbf</span><span class="nb">{</span>(GPa)<span class="nb">}&amp;</span><span class="k">\textbf</span><span class="nb">{</span>(GPa)<span class="nb">}&amp;</span><span class="k">\textbf</span><span class="nb">{</span>(GPa)<span class="nb">}&amp;</span><span class="k">\textbf</span><span class="nb">{</span>(GPa)<span class="nb">}</span><span class="k">\\</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="nb">&amp;&amp;&amp;&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="k">\hline</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        <span class="nb">&amp;&amp;&amp;&amp;&amp;</span> <span class="k">\\</span> 
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>        0 - 1<span class="nb">&amp;</span>  3.05<span class="nb">&amp;</span>   2.71<span class="nb">&amp;</span>   1.96<span class="nb">&amp;</span>   <span class="k">\multirow</span><span class="nb">{</span>3<span class="nb">}{</span>*<span class="nb">}{</span>3<span class="nb">}&amp;</span> <span class="k">\multirow</span><span class="nb">{</span>3<span class="nb">}{</span>*<span class="nb">}{</span>0.5<span class="nb">}</span><span class="k">\\</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>        0 - 2<span class="nb">&amp;</span>  3.34<span class="nb">&amp;</span>   3.43<span class="nb">&amp;</span>   2.44<span class="nb">&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>        0 - 3<span class="nb">&amp;</span>  3.28<span class="nb">&amp;</span>   3.61<span class="nb">&amp;</span>   3.47<span class="nb">&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>        <span class="nb">&amp;&amp;&amp;&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        45 - 1<span class="nb">&amp;</span> 2.54<span class="nb">&amp;</span>   2.2<span class="nb">&amp;</span>    2.39<span class="nb">&amp;</span>   <span class="k">\multirow</span><span class="nb">{</span>3<span class="nb">}{</span>*<span class="nb">}{</span>2.2<span class="nb">}&amp;</span>   <span class="k">\multirow</span><span class="nb">{</span>3<span class="nb">}{</span>*<span class="nb">}{</span>0.4<span class="nb">}</span><span class="k">\\</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>        45 - 2<span class="nb">&amp;</span> 2.43<span class="nb">&amp;</span>   1.03<span class="nb">&amp;</span>   2.1<span class="nb">&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>        45 - 3<span class="nb">&amp;</span> 2.39<span class="nb">&amp;</span>   2.38<span class="nb">&amp;</span>   2.29<span class="nb">&amp;&amp;</span><span class="k">\\</span>                
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>        <span class="nb">&amp;&amp;&amp;&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>        90 - 1<span class="nb">&amp;</span> 4.2<span class="nb">&amp;</span>    3.61<span class="nb">&amp;</span>   1.05<span class="nb">&amp;</span>   <span class="k">\multirow</span><span class="nb">{</span>3<span class="nb">}{</span>*<span class="nb">}{</span>3.4<span class="nb">}</span> <span class="nb">&amp;</span>  <span class="k">\multirow</span><span class="nb">{</span>3<span class="nb">}{</span>*<span class="nb">}{</span>1<span class="nb">}</span><span class="k">\\</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        90 - 2<span class="nb">&amp;</span> 3.56<span class="nb">&amp;</span>   4.81<span class="nb">&amp;</span>   3.98<span class="nb">&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        90 - 3<span class="nb">&amp;</span> 3.52<span class="nb">&amp;</span>   2.37<span class="nb">&amp;</span>   3.21<span class="nb">&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>        <span class="nb">&amp;&amp;&amp;&amp;&amp;</span><span class="k">\\</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>        <span class="k">\hline</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    <span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    <span class="k">\caption</span><span class="nb">{</span>Young&#39;s modulus<span class="nb">}</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    <span class="k">\label</span><span class="nb">{</span>tab:ym<span class="nb">_</span>table<span class="nb">}</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>\begin{tabular}{|c|c|c|c|c|c|}</code> says that we want 6 columns, separated by vertical lines, with the contents centred. Note we've also used vertical lines on the outsides of the columns so that the table is 'boxed'. </li>
+<li><code>\hline</code> draws a horizontal line across the span of the table (we can use these to 'enclose' tables with a top/bottom too, as I have here).</li>
+<li><code>\textbf{}</code> makes the text within the braces bold. </li>
+<li>Values in the table are separated with <code>&amp;</code> (if <span class="arithmatex">\(n\)</span> is the number of columns, there will always be <span class="arithmatex">\(n-1\)</span> <code>&amp;</code>s on any particular row). If we want to leave a row entry empty, we just don't put anything between the <code>&amp;</code> (so, we can leave a whole line empty by doing <code>&amp;&amp;&amp;&amp;&amp;\\</code> )</li>
+<li>Rows are terminated with <code>\\</code> (line break).</li>
+<li>We can use the <code>\multirow</code> package (<code>\usepackage{multirow}</code> at the beginning of the document) to specify that a value should span over multiple rows (3 in our case). The value in the first set of braces indicates the number of rows to span over, the second value specifies what the width of the contents should be (use <code>*</code> to indicate that the value should span to the pre-defined width of the column), and the third is the text to actually render. So, <code>\multirow{3}{*}{0.5}</code> would render <code>0.5</code>, spanning 3 rows, using all the available width of the column. </li>
+</ul>
+<p>The result looks like this: </p>
+<figure>
+<p><img alt="Rendered table" src="../static/latex/rendered_table.png" /></p>
+</figure>
 <h2 id="references">References</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -922,7 +1008,7 @@
 <li>Make a new document in the Overleaf project and call it something .bib (I'll use 'references.bib' for this example). </li>
 <li>Copy the title of the paper and paste it into <a href="https://scholar.google.com/">Google Scholar</a>.</li>
 <li>Click the 'Cite' button at the bottom of the reference listing. 
-    <figure markdonw>
+    <figure markdown>
     <img alt="cite button Google Scholar" src="../static/latex/cite_button.png" />
     </figure markdown></li>
 <li>Click the BibTex button in the 'Cite box' that pops up. 
@@ -937,14 +1023,14 @@
 </li>
 <li>
 <p>Add the following lines just before the <code>\end{document}</code> call (rename 'references' to whatever your bib is called).
-    <div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\bibliographystyle</span><span class="nb">{</span>ieeetr<span class="nb">}</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">\bibliography</span><span class="nb">{</span>references<span class="nb">}</span>
+    <div class="language-latex highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">\bibliographystyle</span><span class="nb">{</span>ieeetr<span class="nb">}</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">\bibliography</span><span class="nb">{</span>references<span class="nb">}</span>
 </span></code></pre></div></p>
 <p><code>\bibiographystyle</code> sets the style of the bibliography (...) and <code>\bibliography</code> loads the actual references (this won't work without a style).</p>
 </li>
 <li>
 <p>We can now refer to our paper using its 'handle': the bit of text just after the @article definition - in this case, 'baker2022cooperative': </p>
-<p><div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>The only correct theory about the relationship between <span class="s">$</span><span class="nb">T_{g}</span><span class="s">$</span> and <span class="s">$</span><span class="nb">M_{w}</span><span class="s">$</span> <span class="k">\cite</span><span class="nb">{</span>baker2022cooperative<span class="nb">}</span> states that... 
+<p><div class="language-latex highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>The only correct theory about the relationship between <span class="s">$</span><span class="nb">T_{g}</span><span class="s">$</span> and <span class="s">$</span><span class="nb">M_{w}</span><span class="s">$</span> <span class="k">\cite</span><span class="nb">{</span>baker2022cooperative<span class="nb">}</span> states that... 
 </span></code></pre></div>
 <figure markdonw>
 <img alt="ref in bibtex file" src="../static/latex/completed_ref.png" />
