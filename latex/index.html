@@ -489,12 +489,27 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Adding equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-inline-mathematical-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding inline mathematical symbols
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-a-figure" class="md-nav__link">
+  <a href="#adding-figures" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding a figure
+      Adding figures
     </span>
   </a>
   
@@ -743,12 +758,27 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Adding equations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-inline-mathematical-symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding inline mathematical symbols
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-a-figure" class="md-nav__link">
+  <a href="#adding-figures" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding a figure
+      Adding figures
     </span>
   </a>
   
@@ -807,7 +837,7 @@
 <h2 id="adding-equations">Adding equations</h2>
 <p>To add an equation, we need to create an 'equation' environment. The following is the code you would use to write the Havriliak-Negami function: </p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">\varepsilon</span><span class="nb">^{</span>*<span class="nb">}</span>(<span class="k">\omega</span>) = <span class="k">\varepsilon</span><span class="nb">_{</span><span class="k">\inf</span><span class="nb">}</span> + 
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">\varepsilon</span><span class="nb">^{</span>*<span class="nb">}</span>(<span class="k">\omega</span>) = <span class="k">\varepsilon</span><span class="nb">_{</span><span class="k">\infty</span><span class="nb">}</span> + 
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">\frac</span><span class="nb">{</span><span class="k">\Delta\varepsilon</span><span class="nb">}</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="nb">{</span>(1 + (i<span class="k">\omega\tau</span><span class="nb">_{</span><span class="k">\mathrm</span><span class="nb">{</span>HN<span class="nb">}}</span>)<span class="nb">^{</span><span class="k">\alpha</span><span class="nb">}</span>)<span class="nb">^{</span><span class="k">\beta</span><span class="nb">}}</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">\label</span><span class="nb">{</span>eq:HN<span class="nb">}</span>
@@ -817,6 +847,7 @@
 <li>The <code>\begin{equation}</code> and <code>\end{equation}</code> lines denote the beginning and end of the equation environment. </li>
 <li>We can type various symbols by using a backslash and the symbol name (there are loads of 'symbol lists' online and Overleaf has a 'symbol palette'). For example, β would be <code>\beta</code>.</li>
 <li>Subscripts and superscripts are rendered using the <code>_</code> and <code>^</code> symbols. If there are more than one symbol/letter to go in the superscript then you should encase the super-/subscripts in curly braces. For example, to write alpha, subscript 'n', superscript 'tau' you would write: <code>\alpha_{n}^{3\tau}</code>.</li>
+<li>We can use <code>\mathrm{}</code> to remove the 'mathsy formatting' for letters (i.e. in this case we don't want 'HN' to be italicised). </li>
 <li>If you want your equation to be 'un-numbered' then you can enclose the equation in <code>\begin{equation*}</code> and <code>\end{equation*}</code> instead.</li>
 </ul>
 <p>This equation renders as: </p>
@@ -826,18 +857,27 @@
 <p>and we can refer to it in the main text using its label: </p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Equation <span class="k">\ref</span><span class="nb">{</span>eq:HN<span class="nb">}</span> is the Havriliak-Negami equation. 
 </span></code></pre></div>
-<h2 id="adding-a-figure">Adding a figure</h2>
+<h3 id="adding-inline-mathematical-symbols">Adding inline mathematical symbols</h3>
+<p>We often need to add 'inline' maths in the main text (to explain what the symbols mean in an equation, for example). You can invoke an inline equation environment by enclosing the things you want to render in <code>$$</code>. For example, if we wanted to explain the symbols in our Havriliak-Negami equation: </p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>where <span class="s">$</span><span class="nv">\varepsilon</span><span class="nb">^{</span><span class="o">*</span><span class="nb">}</span><span class="s">$</span> is the complex dielectric permittivity, 
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s">$</span><span class="nv">\varepsilon</span><span class="nb">_{</span><span class="nv">\infty</span><span class="nb">}</span><span class="s">$</span> is the permittivity as frequency tends to infinity, 
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s">$</span><span class="nv">\Delta\varepsilon</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\varepsilon</span><span class="nb">_</span><span class="m">0</span><span class="nb"> </span><span class="o">-</span><span class="nb"> </span><span class="nv">\varepsilon</span><span class="nb">_{</span><span class="nv">\infty</span><span class="nb">}</span><span class="s">$</span> is the dielectric strength...  
+</span></code></pre></div>
+<figure>
+<p><img alt="HN eq" src="../static/latex/inline_maths.png" /></p>
+</figure>
+<h2 id="adding-figures">Adding figures</h2>
 <p>The first thing we need to do is upload our figure to our Overleaf project. On the left hand side of the screen you should see a box with 'main.tex' in. This is our document file. We can upload a figure by dragging and dropping the file into this box, or we can use the upload button (little up-arrow). Here, I've uploaded a figure called 'samplecell.pdf': </p>
 <figure>
 <p><img alt="upload figure" src="../static/latex/figureuploaded.png" /></p>
 </figure>
 <p>To add this into our document, we need to make a 'figure' environment, and load our figure: </p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">\centering</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">\includegraphics</span><span class="na">[width=0.8\linewidth]</span><span class="nb">{</span>samplecell.pdf<span class="nb">}</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">\caption</span><span class="nb">{</span>Sample cell for the Novocontrol dielectric spectrometer.<span class="nb">}</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="k">\label</span><span class="nb">{</span>fig:sample<span class="nb">_</span>cell<span class="nb">}</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">\centering</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">\includegraphics</span><span class="na">[width=0.8\linewidth]</span><span class="nb">{</span>samplecell.pdf<span class="nb">}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">\caption</span><span class="nb">{</span>Sample cell for the Novocontrol dielectric spectrometer.<span class="nb">}</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">\label</span><span class="nb">{</span>fig:sample<span class="nb">_</span>cell<span class="nb">}</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
 </span></code></pre></div>
 <ul>
 <li>The <code>\begin{figure}</code> and <code>\end{figure}</code> lines denote the beginning and end of the figure environment. </li>
@@ -851,7 +891,7 @@
 <p><img alt="rendered figure" src="../static/latex/samplecell_rendered.png" /></p>
 </figure>
 <p>To refer to the figure in the main text, we use the <code>\ref</code> command. For example: </p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Figure <span class="k">\ref</span><span class="nb">{</span>fig:sample<span class="nb">_</span>cell<span class="nb">}</span> is a schematic of the sample cell for the Novocontrol dielectric spectrometer.  
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Figure <span class="k">\ref</span><span class="nb">{</span>fig:sample<span class="nb">_</span>cell<span class="nb">}</span> is a schematic of the sample cell for the Novocontrol dielectric spectrometer.  
 </span></code></pre></div>
 
 
