@@ -483,19 +483,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-equations" class="md-nav__link">
+  <a href="#equations" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding equations
+      Equations
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Adding equations">
+    <nav class="md-nav" aria-label="Equations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-inline-mathematical-symbols" class="md-nav__link">
+  <a href="#inline-mathematical-symbols" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding inline mathematical symbols
+      Inline mathematical symbols
     </span>
   </a>
   
@@ -507,9 +507,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-figures" class="md-nav__link">
+  <a href="#figures" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding figures
+      Figures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -752,19 +761,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-equations" class="md-nav__link">
+  <a href="#equations" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding equations
+      Equations
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Adding equations">
+    <nav class="md-nav" aria-label="Equations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#adding-inline-mathematical-symbols" class="md-nav__link">
+  <a href="#inline-mathematical-symbols" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding inline mathematical symbols
+      Inline mathematical symbols
     </span>
   </a>
   
@@ -776,9 +785,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#adding-figures" class="md-nav__link">
+  <a href="#figures" class="md-nav__link">
     <span class="md-ellipsis">
-      Adding figures
+      Figures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -799,7 +817,7 @@
                   
 
 
-<h1 id="latex">Latex</h1>
+<h1 id="latex"><span class="arithmatex">\(\LaTeX\)</span></h1>
 <h2 id="start-a-new-blank-project-in-overleaf">Start a new, blank project in Overleaf</h2>
 <ol>
 <li>Log in to <a href="https://www.overleaf.com">Overleaf</a></li>
@@ -824,7 +842,7 @@
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
 </span></code></pre></div>
-<p>All TeX functions are prefaced by backslashes. The main, required argument goes in {} and optional arguments go in []: <code>\examplefunction[option1, option2]{mainarg}</code></p>
+<p>All <span class="arithmatex">\(\LaTeX\)</span> functions are prefaced by backslashes. The main, required argument goes in {} and optional arguments go in []: <code>\examplefunction[option1, option2]{mainarg}</code></p>
 <ul>
 <li><code>\documentclass</code> sets the... class of the...document. There are many prebuilt examples. We can use parameters passed to this function to change various ways in which the document is formatted overall, for example, if we want the document to be a two columned article: <code>\documentclass[twocolumn]{article}</code></li>
 <li>The <code>\usepackage</code> function is used to load in extra functionality (like <code>import</code> in Python). In this case, <code>\usepackage{graphicx}</code> loads the `graphicx' package (so that images can be rendered) into the scope of the current document. </li>
@@ -834,7 +852,7 @@
 <li>The main text of the document needs to go in between the <code>\begin{document}</code> and <code>\end{document}</code> function calls.</li>
 <li>We can use the <code>\section</code> function to denote sections within the document (and <code>\subsection</code> and <code>\subsubsection</code>). </li>
 </ul>
-<h2 id="adding-equations">Adding equations</h2>
+<h2 id="equations">Equations</h2>
 <p>To add an equation, we need to create an 'equation' environment. The following is the code you would use to write the Havriliak-Negami function: </p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">\varepsilon</span><span class="nb">^{</span>*<span class="nb">}</span>(<span class="k">\omega</span>) = <span class="k">\varepsilon</span><span class="nb">_{</span><span class="k">\infty</span><span class="nb">}</span> + 
@@ -857,7 +875,7 @@
 <p>and we can refer to it in the main text using its label: </p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Equation <span class="k">\ref</span><span class="nb">{</span>eq:HN<span class="nb">}</span> is the Havriliak-Negami equation. 
 </span></code></pre></div>
-<h3 id="adding-inline-mathematical-symbols">Adding inline mathematical symbols</h3>
+<h3 id="inline-mathematical-symbols">Inline mathematical symbols</h3>
 <p>We often need to add 'inline' maths in the main text (to explain what the symbols mean in an equation, for example). You can invoke an inline equation environment by enclosing the things you want to render in <code>$$</code>. For example, if we wanted to explain the symbols in our Havriliak-Negami equation: </p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>where <span class="s">$</span><span class="nv">\varepsilon</span><span class="nb">^{</span><span class="o">*</span><span class="nb">}</span><span class="s">$</span> is the complex dielectric permittivity, 
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s">$</span><span class="nv">\varepsilon</span><span class="nb">_{</span><span class="nv">\infty</span><span class="nb">}</span><span class="s">$</span> is the permittivity as frequency tends to infinity, 
@@ -866,7 +884,7 @@
 <figure>
 <p><img alt="HN eq" src="../static/latex/inline_maths.png" /></p>
 </figure>
-<h2 id="adding-figures">Adding figures</h2>
+<h2 id="figures">Figures</h2>
 <p>The first thing we need to do is upload our figure to our Overleaf project. On the left hand side of the screen you should see a box with 'main.tex' in. This is our document file. We can upload a figure by dragging and dropping the file into this box, or we can use the upload button (little up-arrow). Here, I've uploaded a figure called 'samplecell.pdf': </p>
 <figure>
 <p><img alt="upload figure" src="../static/latex/figureuploaded.png" /></p>
@@ -893,6 +911,46 @@
 <p>To refer to the figure in the main text, we use the <code>\ref</code> command. For example: </p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Figure <span class="k">\ref</span><span class="nb">{</span>fig:sample<span class="nb">_</span>cell<span class="nb">}</span> is a schematic of the sample cell for the Novocontrol dielectric spectrometer.  
 </span></code></pre></div>
+<h2 id="references">References</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I (Dan) don't use 'reference managers' at all. It's totally possible that your reference manager can produce a .bib that you can use in your <span class="arithmatex">\(\LaTeX\)</span> documents, and if you discover that it does then it would be great if you could write some instructions for doing that, and we can add them here too!</p>
+</div>
+<p>References for <span class="arithmatex">\(\LaTeX\)</span> are managed/compiled using 'BibTeX' and references are stored in '.bib' files. </p>
+<p>Let's say we want to reference this glorious paper: <a href="https://journals.aps.org/prx/abstract/10.1103/PhysRevX.12.021047">Cooperative Intramolecular Dynamics Control the Chain-Length-Dependent Glass Transition in Polymers</a> in our document: </p>
+<ol>
+<li>Make a new document in the Overleaf project and call it something .bib (I'll use 'references.bib' for this example). </li>
+<li>Copy the title of the paper and paste it into <a href="https://scholar.google.com/">Google Scholar</a>.</li>
+<li>Click the 'Cite' button at the bottom of the reference listing. 
+    <figure markdonw>
+    <img alt="cite button Google Scholar" src="../static/latex/cite_button.png" />
+    </figure markdown></li>
+<li>Click the BibTex button in the 'Cite box' that pops up. 
+    <figure markdonw>
+    <img alt="cite box Scholar" src="../static/latex/scholar_cite_box.png" />
+    </figure markdown></li>
+<li>
+<p>Copy the whole text of the resulting reference and paste it into your .bib file. 
+    <figure markdonw>
+    <img alt="ref in bibtex file" src="../static/latex/ref_in_bib.png" />
+    </figure markdown></p>
+</li>
+<li>
+<p>Add the following lines just before the <code>\end{document}</code> call (rename 'references' to whatever your bib is called).
+    <div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\bibliographystyle</span><span class="nb">{</span>ieeetr<span class="nb">}</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">\bibliography</span><span class="nb">{</span>references<span class="nb">}</span>
+</span></code></pre></div></p>
+<p><code>\bibiographystyle</code> sets the style of the bibliography (...) and <code>\bibliography</code> loads the actual references (this won't work without a style).</p>
+</li>
+<li>
+<p>We can now refer to our paper using its 'handle': the bit of text just after the @article definition - in this case, 'baker2022cooperative': </p>
+<p><div class="language-latex highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>The only correct theory about the relationship between <span class="s">$</span><span class="nb">T_{g}</span><span class="s">$</span> and <span class="s">$</span><span class="nb">M_{w} </span><span class="nv">\cite</span><span class="nb">{baker</span><span class="m">2022</span><span class="nb">cooperative} states that... </span>
+</span></code></pre></div>
+<figure markdonw>
+<img alt="ref in bibtex file" src="../static/latex/completed_ref.png" />
+</figure markdown></p>
+</li>
+</ol>
 
 
 
