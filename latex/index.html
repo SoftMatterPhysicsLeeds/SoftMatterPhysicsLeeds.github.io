@@ -549,9 +549,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Leeds Thesis Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#project-structure" class="md-nav__link">
     <span class="md-ellipsis">
       Project Structure
@@ -559,13 +560,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#adding-a-chapter" class="md-nav__link">
     <span class="md-ellipsis">
       Adding a chapter
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -872,9 +878,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Leeds Thesis Template">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#project-structure" class="md-nav__link">
     <span class="md-ellipsis">
       Project Structure
@@ -882,13 +889,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#adding-a-chapter" class="md-nav__link">
     <span class="md-ellipsis">
       Adding a chapter
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1144,7 +1156,7 @@
 <li>Click 'Upload Project' </li>
 <li>Drag .zip into the window / click to browse your PC for the .zip. </li>
 </ol>
-<h2 id="project-structure">Project Structure</h2>
+<h3 id="project-structure">Project Structure</h3>
 <ul>
 <li><code>thesis.tex</code> is the 'entry point' for the thesis. You could, technically, add all your text / images etc into this file and have your entire thesis in one big file, but that would be a complete nightmare... </li>
 <li><code>Classes\myThesis.cls</code> is the custom document class for this template (it is loaded at the top of <code>thesis.tex</code>: <code>\documentclass[twoside,12pt]{Classes/myThesis}</code>). This class defines custom environments for the Acknowledgements, Abstract, etc and also sets the spacing for the title page, loads packages and so on. </li>
@@ -1163,7 +1175,7 @@
 </span></code></pre></div>
 </li>
 </ul>
-<h2 id="adding-a-chapter">Adding a chapter</h2>
+<h3 id="adding-a-chapter">Adding a chapter</h3>
 <p>If you look at the project structure window (left hand side), you'll see that there is already an <code>Introduction</code> folder. If we open <code>Introduction\Introduction.tex</code>, we get an example of how to add text / figures to a chapter: </p>
 <div class="language-LaTeX highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c">%=== Chapter One ===</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">\chapter</span><span class="nb">{</span>Introduction<span class="nb">}</span>
