@@ -542,6 +542,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#leeds-thesis-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leeds Thesis Template
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a chapter
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -838,6 +865,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#leeds-thesis-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leeds Thesis Template
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-a-chapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding a chapter
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -952,7 +1006,7 @@
 <p><img alt="upload figure" src="../static/latex/figureuploaded.png" /></p>
 </figure>
 <p>To add this into our document, we need to make a 'figure' environment, and load our figure: </p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[]
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="k">\centering</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="k">\includegraphics</span><span class="na">[width=0.8\linewidth]</span><span class="nb">{</span>samplecell.pdf<span class="nb">}</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">\caption</span><span class="nb">{</span>Sample cell for the Novocontrol dielectric spectrometer.<span class="nb">}</span>
@@ -960,7 +1014,7 @@
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
 </span></code></pre></div>
 <ul>
-<li>The <code>\begin{figure}</code> and <code>\end{figure}</code> lines denote the beginning and end of the figure environment. </li>
+<li>The <code>\begin{figure}</code> and <code>\end{figure}</code> lines denote the beginning and end of the figure environment. We can use the square brackets after the <code>\begin{figure}</code> call to specify the priority that <span class="arithmatex">\(\LaTeX\)</span> should use when positioning the figure on the page. For example, if we use <code>\begin{figure}[htbp]</code>, this means, first, <span class="arithmatex">\(\LaTeX\)</span> will try to place the figure 'here' (i.e. the position in the text where the figure is called), and then the 'top', 'bottom', and finally a whole 'page'.</li>
 <li><code>\centering</code> centers the figure relative to the page. </li>
 <li><code>\includegraphics</code> loads the figure itself (main argument in {}). Here, we have used an optional argument to specify that the width of the figure should be 0.8 times the <code>\linewidth</code> parameter, which sets the maximum length of a line. By setting the width relative to <code>\linewidth</code>, the figure will automatically scale if we, for example, decide to change the margins of the document. </li>
 <li><code>\caption</code> sets the text which will be displayed under the figure. This will display as "Figure X: Caption Text", where X is the figure number relative to the other figures in the document. This means you don't have to worry about numbering figures!</li>
@@ -985,8 +1039,8 @@
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="k">\label</span><span class="nb">{</span>tab:my<span class="nb">_</span>label<span class="nb">}</span>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">\end</span><span class="nb">{</span>table<span class="nb">}</span>
 </span></code></pre></div>
-- The <code>\begin{table}</code> and <code>\end{table}</code> lines denote the beginning and end of the figure environment. 
-- <code>\centering</code> centers the figure relative to the page.
+- The <code>\begin{table}</code> and <code>\end{table}</code> lines denote the beginning and end of the table environment. We can use the square brackets after the <code>\begin{table}</code> call to specify the priority that <span class="arithmatex">\(\LaTeX\)</span> should use when positioning the table on the page. For example, if we use <code>\begin{table}[htbp]</code>, this means, first, <span class="arithmatex">\(\LaTeX\)</span> will try to place the table 'here' (i.e. the position in the text where the table is called), and then the 'top', 'bottom', and finally a whole 'page'. 
+- <code>\centering</code> centers the table relative to the page.
 - The actual table is rendered within the 'tabular' block (between <code>\begin{tabular}</code> and <code>\end{tabular}</code>). The second set of <code>{}</code> after <code>\begin{tabular}</code> are used to specify the number of columns and how the text within those columns is aligned e.g. <code>{c|c}</code> means two columns with a single vertical line between with the text centered in each column. 
 - Values are added to the table using <code>&amp;</code> between columns. The end of a row is denoted by <code>\\</code>
 - <code>\caption</code> sets the text which will be displayed under the table. This will display as "Table X: Caption Text", where X is the table number relative to the other tables in the document.
@@ -1081,6 +1135,62 @@
 </figure markdown></p>
 </li>
 </ol>
+<h2 id="leeds-thesis-template">Leeds Thesis Template</h2>
+<p>In this section, I'm going to explain how to get started with the 'Leeds Thesis Template' that has been going around since 2003 or so. I won't explain literally every command but this should allow you to start writing... </p>
+<p>To start a new project using the Leeds Thesis Template: </p>
+<ol>
+<li>Download the latest .zip of the template from our Teams space (General -&gt; Files)</li>
+<li>Go to <a href="https://www.overleaf.com">Overleaf</a> and click 'New Project'.</li>
+<li>Click 'Upload Project' </li>
+<li>Drag .zip into the window / click to browse your PC for the .zip. </li>
+</ol>
+<h2 id="project-structure">Project Structure</h2>
+<ul>
+<li><code>thesis.tex</code> is the 'entry point' for the thesis. You could, technically, add all your text / images etc into this file and have your entire thesis in one big file, but that would be a complete nightmare... </li>
+<li><code>Classes\myThesis.cls</code> is the custom document class for this template (it is loaded at the top of <code>thesis.tex</code>: <code>\documentclass[twoside,12pt]{Classes/myThesis}</code>). This class defines custom environments for the Acknowledgements, Abstract, etc and also sets the spacing for the title page, loads packages and so on. </li>
+<li>If you scroll down <code>thesis.tex</code> you will see some <code>\include</code> statements (starting on line 49 with <code>\include{Dedication/dedication}</code>). Include statements allow you to include other .tex files as if you have copy/pasted their contents straight into <code>thesis.tex</code>. This allows us to separate different sections of our thesis into separate files which helps with organisation but also with compile time: when your thesis starts getting large (multiple chapters, lots of figures etc etc) then it can take a while to compile the whole thesis, which is annoying when you're trying to see how a particular edit is affecting the document. To solve this, you can comment out (add <code>%</code> to the beginning of the line) the <code>\include</code> statements of chapters/sections you aren't currently editing and that will make the resulting .pdf render faster!</li>
+<li>
+<p>Each of the included .tex files has its own folder, but this is completely arbitrary. If you wanted to make things even simpler, you could just make a big folder called 'StuffAtBeginning' and stick all the .tex files for the Acknowledgements, Abstract etc in there instead. You would then just change the <code>\include</code> statements to have the correct path: </p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>...
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/dedication<span class="nb">}</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Acknowledgement<span class="nb">}</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/acknowledgement<span class="nb">}</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abstract<span class="nb">}</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/abstract<span class="nb">}</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abbreviations<span class="nb">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/Abbreviations<span class="nb">}</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>...
+</span></code></pre></div>
+</li>
+</ul>
+<h2 id="adding-a-chapter">Adding a chapter</h2>
+<p>If you look at the project structure window (left hand side), you'll see that there is already an <code>Introduction</code> folder. If we open <code>Introduction\Introduction.tex</code>, we get an example of how to add text / figures to a chapter: </p>
+<div class="language-LaTeX highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c">%=== Chapter One ===</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">\chapter</span><span class="nb">{</span>Introduction<span class="nb">}</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>Introduction/IntroductionFigs/<span class="nb">}}</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">\section</span><span class="nb">{</span>Introduction<span class="nb">}</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>Ever advancing developments in computational power....
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>  <span class="k">\mbox</span><span class="nb">{</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>     <span class="k">\subfigure</span><span class="na">[]</span><span class="nb">{{</span><span class="k">\includegraphics</span><span class="na">[width=3.2in, angle=-0]</span><span class="nb">{</span>ScaleCartoon.eps<span class="nb">}}}</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>     <span class="k">\subfigure</span><span class="na">[]</span><span class="nb">{{</span><span class="k">\includegraphics</span><span class="na">[width=1.6in, angle=-0]</span><span class="nb">{</span>Introduction/IntroductionFigs/ScaleCartoon.eps<span class="nb">}}}</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>       <span class="nb">}</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>   <span class="k">\caption</span><span class="nb">{</span>Simulation Scale Cartoon <span class="k">\citep</span><span class="nb">{</span>nielsen2004cgm<span class="nb">}</span>.<span class="nb">}</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>   <span class="k">\label</span><span class="nb">{</span>fig:Simscale<span class="nb">}</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="k">\subsection</span><span class="nb">{</span>Background<span class="nb">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>\chapter{Introduction}</code> sets the title of the Chapter. </li>
+<li><code>\graphicspath{Introduction/IntroductionFigs}</code> adds <code>Introduction/IntroductionFigs</code> to the path that <span class="arithmatex">\(\LaTeX\)</span> uses to look for figures when we include them. This means we can include figures directly by their filename without having to include their entire path (e.g. <code>\subfigure[]{{\includegraphics[width=3.2in, angle=-0]{ScaleCartoon.eps}}}</code>). We don't have to do this - we could also call them by using their whole path (e.g. <code>\subfigure[]{{\includegraphics[width=1.6in, angle=-0]{Introduction/IntroductionFigs/ScaleCartoon.eps}}}</code>).</li>
+</ul>
+<p>If we go back to <code>thesis.tex</code> and scroll down to just after the <code>\mainmatter</code> call, then we can see our Introduction chapter included: <code>\include{Introduction/Introduction.tex}</code></p>
 
 
 
