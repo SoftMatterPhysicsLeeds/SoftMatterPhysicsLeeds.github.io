@@ -954,6 +954,7 @@
 <li>The main text of the document needs to go in between the <code>\begin{document}</code> and <code>\end{document}</code> function calls.</li>
 <li>We can use the <code>\section</code> function to denote sections within the document (and <code>\subsection</code> and <code>\subsubsection</code>). </li>
 </ul>
+<p>Comments are denoted by <code>%</code> - text after a <code>%</code> on a particular line will not be compiled by <code>$LaTeX</code>, so you can use these to write notes about the function of a particular line, for example.</p>
 <h2 id="equations">Equations</h2>
 <p>To add an equation, we need to create an 'equation' environment. The following is the code you would use to write the Havriliak-Negami function: </p>
 <div class="language-latex highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
@@ -1202,7 +1203,15 @@
 <li><code>\chapter{Introduction}</code> sets the title of the Chapter. </li>
 <li><code>\graphicspath{Introduction/IntroductionFigs}</code> adds <code>Introduction/IntroductionFigs</code> to the path that <span class="arithmatex">\(\LaTeX\)</span> uses to look for figures when we include them. This means we can include figures directly by their filename without having to include their entire path (e.g. <code>\subfigure[]{{\includegraphics[width=3.2in, angle=-0]{ScaleCartoon.eps}}}</code>). We don't have to do this - we could also call them by using their whole path (e.g. <code>\subfigure[]{{\includegraphics[width=1.6in, angle=-0]{Introduction/IntroductionFigs/ScaleCartoon.eps}}}</code>).</li>
 </ul>
-<p>If we go back to <code>thesis.tex</code> and scroll down to just after the <code>\mainmatter</code> call, then we can see our Introduction chapter included: <code>\include{Introduction/Introduction.tex}</code></p>
+<p>If we go back to <code>thesis.tex</code> and scroll down to just after the <code>\mainmatter</code> call, then we can see our Introduction chapter included: <code>\include{Introduction/Introduction.tex}</code>. If we wanted to add another chapter, we could make a new folder called, for example <code>Chapter 2</code> and put a <code>Chapter2.tex</code> file in the folder. If we wanted, we could also add a folder for figures: <code>Chapter2Figs</code>. We could then add the following to <code>Chapter2.tex</code>:</p>
+<div class="language-LaTeX highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c">%=== Chapter Two ===</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">\chapter</span><span class="nb">{</span>Chapter 2: Electric Boogaloo<span class="nb">}</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>Chapter2/Chapter2Figs/<span class="nb">}}</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">\section</span><span class="nb">{</span>More Science<span class="nb">}</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a> blah blah blah blah
+</span></code></pre></div>
+<p>and add it to our thesis by including it in <code>thesis.tex</code>, by writing the line <code>\include{Chapter2/Chapter2.tex}</code> under the include statement for the first chapter.</p>
 
 
 
