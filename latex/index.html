@@ -564,6 +564,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#compile-latex-without-overleaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compile \(\LaTeX\) without Overleaf
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -902,6 +911,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#compile-latex-without-overleaf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compile \(\LaTeX\) without Overleaf
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1216,6 +1234,28 @@
 <p><img alt="new thesis structure" src="../static/latex/new_thesis_template_structure.png" /></p>
 </figure>
 <p>In this new structure, we have all the figures, front matter, chapters and references in relevant folders. If we want to add a new chapter, we'd just add a new <code>.tex</code> file to the <code>Chapters</code> folder and set the <code>\graphicspath</code> to a new folder in the <code>Figures</code> folder. We could then include the new chapter in the thesis by adding <code>\include{Chapters/NewChapter}</code> to <code>thesis.tex</code>.</p>
+<h2 id="compile-latex-without-overleaf">Compile <span class="arithmatex">\(\LaTeX\)</span> without Overleaf</h2>
+<p>So far we have only considered Overleaf as an option for compiling <span class="arithmatex">\(\LaTeX\)</span> documents, but that isn't the only option. The following are instructions for how to compile <span class="arithmatex">\(\LaTeX\)</span> documents on your PC (well, one of the many ways...): </p>
+<ol>
+<li>Download <a href="https://miktex.org/download">MikTek</a> and install it as a user (you don't need admin rights or AppsAnywhere or permission from the king). At some point it will give you a choice whether you want to 'Install missing packages on-the-fly' or not; for the most 'Overleaf-like' experience, I would say 'yes'. </li>
+<li>
+<p>Open PowerShell and change directory, <code>cd</code>, to a folder containing the document you want to compile. As an example, let's go to a thesis folder: </p>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">cd </span><span class="s2">&quot;C:\Users\YourUsername\Thesis&quot;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p>We now need to:</p>
+<ul>
+<li>run <code>pdflatex</code> to generate some output files,</li>
+<li>run <code>bibtek</code> on the <code>.aux</code> file that was generated to sort the references, </li>
+<li>run <code>pdflatex</code> two more times to sort internal references and to link the biliography properly. </li>
+</ul>
+<p>In one line (assuminig our <code>.tex</code> file is called <code>thesis.tex</code>): </p>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">pdflatex</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">thesis</span><span class="p">.</span><span class="n">tex</span> <span class="p">&amp;&amp;</span> <span class="n">bibtex</span><span class="p">.</span><span class="n">exe</span> <span class="n">thesis</span><span class="p">.</span><span class="n">aux</span> <span class="p">&amp;&amp;</span> <span class="n">pdflatex</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">thesis</span><span class="p">.</span><span class="n">tex</span> <span class="p">&amp;&amp;</span> <span class="n">pdflatex</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">thesis</span><span class="p">.</span><span class="n">tex</span>
+</span></code></pre></div>
+</li>
+</ol>
+<p>This will be quite slow the first time (MikTek will probably have to download some packages), but subsequent compilations should be much faster (my thesis compiles from 'scratch' in about 10 seconds). </p>
 
 
 
