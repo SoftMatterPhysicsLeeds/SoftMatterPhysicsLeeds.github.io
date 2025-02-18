@@ -523,6 +523,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#other-useful-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other useful things
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other useful things">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#force-figuretable-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Force figure/table placement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leeds-thesis-template" class="md-nav__link">
     <span class="md-ellipsis">
       Leeds Thesis Template
@@ -870,6 +894,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#other-useful-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other useful things
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other useful things">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#force-figuretable-placement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Force figure/table placement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#leeds-thesis-template" class="md-nav__link">
     <span class="md-ellipsis">
       Leeds Thesis Template
@@ -1164,6 +1212,11 @@
 </figure markdown></p>
 </li>
 </ol>
+<h2 id="other-useful-things">Other useful things</h2>
+<h3 id="force-figuretable-placement">Force figure/table placement</h3>
+<p><span class="arithmatex">\(\LaTeX\)</span> will automatically try and place floats (e.g. figures and tables) in the 'place that makes most sense' in terms of page usage. If you're making a document with relatively minimal text (for a meeting or something) then this can mean that all your figures get bunched up at the end; 'correct' figure placement is subjective! If you just want your figures to appear in the position they are called (and <code>\begin{figure}[htbp]</code> isn't working), then you can include the following package to force the behaviour you (probably) want: </p>
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&quot;<span class="k">\usepackage</span><span class="na">[section]</span><span class="nb">{</span>placeins<span class="nb">}</span>&quot;
+</span></code></pre></div>
 <h2 id="leeds-thesis-template">Leeds Thesis Template</h2>
 <p>In this section, I'm going to explain how to get started with the 'Leeds Thesis Template' that has been going around since 2003 or so. I won't explain literally every command but this should allow you to start writing... </p>
 <p>To start a new project using the Leeds Thesis Template: </p>
@@ -1180,52 +1233,52 @@
 <li>If you scroll down <code>thesis.tex</code> you will see some <code>\include</code> statements (starting on line 49 with <code>\include{Dedication/dedication}</code>). Include statements allow you to include other .tex files as if you have copy/pasted their contents straight into <code>thesis.tex</code>. This allows us to separate different sections of our thesis into separate files which helps with organisation but also with compile time: when your thesis starts getting large (multiple chapters, lots of figures etc etc) then it can take a while to compile the whole thesis, which is annoying when you're trying to see how a particular edit is affecting the document. To solve this, you can comment out (add <code>%</code> to the beginning of the line) the <code>\include</code> statements of chapters/sections you aren't currently editing and that will make the resulting .pdf render faster!</li>
 <li>
 <p>Each of the included .tex files has its own folder, but this is completely arbitrary. If you wanted to make things even simpler, you could just make a big folder called 'StuffAtBeginning' and stick all the .tex files for the Acknowledgements, Abstract etc in there instead. You would then just change the <code>\include</code> statements to have the correct path: </p>
-<div class="language-latex highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>...
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/dedication<span class="nb">}</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Acknowledgement<span class="nb">}</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/acknowledgement<span class="nb">}</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abstract<span class="nb">}</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/abstract<span class="nb">}</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abbreviations<span class="nb">}</span>
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/Abbreviations<span class="nb">}</span>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>...
+<div class="language-latex highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>...
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/dedication<span class="nb">}</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Acknowledgement<span class="nb">}</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/acknowledgement<span class="nb">}</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abstract<span class="nb">}</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/abstract<span class="nb">}</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="k">\addcontentsline</span><span class="nb">{</span>toc<span class="nb">}{</span>chapter<span class="nb">}{</span>Abbreviations<span class="nb">}</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="k">\include</span><span class="nb">{</span>StuffAtBeginning/Abbreviations<span class="nb">}</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>...
 </span></code></pre></div>
 </li>
 </ul>
 <h3 id="adding-a-chapter">Adding a chapter</h3>
 <p>If you look at the project structure window (left hand side), you'll see that there is already an <code>Introduction</code> folder. If we open <code>Introduction\Introduction.tex</code>, we get an example of how to add text / figures to a chapter: </p>
-<div class="language-LaTeX highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c">%=== Chapter One ===</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">\chapter</span><span class="nb">{</span>Introduction<span class="nb">}</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>Introduction/IntroductionFigs/<span class="nb">}}</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">\section</span><span class="nb">{</span>Introduction<span class="nb">}</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>Ever advancing developments in computational power....
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>  <span class="k">\mbox</span><span class="nb">{</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>     <span class="k">\subfigure</span><span class="na">[]</span><span class="nb">{{</span><span class="k">\includegraphics</span><span class="na">[width=3.2in, angle=-0]</span><span class="nb">{</span>ScaleCartoon.eps<span class="nb">}}}</span>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>     <span class="k">\subfigure</span><span class="na">[]</span><span class="nb">{{</span><span class="k">\includegraphics</span><span class="na">[width=1.6in, angle=-0]</span><span class="nb">{</span>Introduction/IntroductionFigs/ScaleCartoon.eps<span class="nb">}}}</span>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>       <span class="nb">}</span>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>   <span class="k">\caption</span><span class="nb">{</span>Simulation Scale Cartoon <span class="k">\citep</span><span class="nb">{</span>nielsen2004cgm<span class="nb">}</span>.<span class="nb">}</span>
-</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>   <span class="k">\label</span><span class="nb">{</span>fig:Simscale<span class="nb">}</span>
-</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
-</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
-</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
-</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="k">\subsection</span><span class="nb">{</span>Background<span class="nb">}</span>
+<div class="language-LaTeX highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c">%=== Chapter One ===</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">\chapter</span><span class="nb">{</span>Introduction<span class="nb">}</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>Introduction/IntroductionFigs/<span class="nb">}}</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">\section</span><span class="nb">{</span>Introduction<span class="nb">}</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Ever advancing developments in computational power....
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>  <span class="k">\mbox</span><span class="nb">{</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>     <span class="k">\subfigure</span><span class="na">[]</span><span class="nb">{{</span><span class="k">\includegraphics</span><span class="na">[width=3.2in, angle=-0]</span><span class="nb">{</span>ScaleCartoon.eps<span class="nb">}}}</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>     <span class="k">\subfigure</span><span class="na">[]</span><span class="nb">{{</span><span class="k">\includegraphics</span><span class="na">[width=1.6in, angle=-0]</span><span class="nb">{</span>Introduction/IntroductionFigs/ScaleCartoon.eps<span class="nb">}}}</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>       <span class="nb">}</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>   <span class="k">\caption</span><span class="nb">{</span>Simulation Scale Cartoon <span class="k">\citep</span><span class="nb">{</span>nielsen2004cgm<span class="nb">}</span>.<span class="nb">}</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>   <span class="k">\label</span><span class="nb">{</span>fig:Simscale<span class="nb">}</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="k">\subsection</span><span class="nb">{</span>Background<span class="nb">}</span>
 </span></code></pre></div>
 <ul>
 <li><code>\chapter{Introduction}</code> sets the title of the Chapter. </li>
 <li><code>\graphicspath{Introduction/IntroductionFigs}</code> adds <code>Introduction/IntroductionFigs</code> to the path that <span class="arithmatex">\(\LaTeX\)</span> uses to look for figures when we include them. This means we can include figures directly by their filename without having to include their entire path (e.g. <code>\subfigure[]{{\includegraphics[width=3.2in, angle=-0]{ScaleCartoon.eps}}}</code>). We don't have to do this - we could also call them by using their whole path (e.g. <code>\subfigure[]{{\includegraphics[width=1.6in, angle=-0]{Introduction/IntroductionFigs/ScaleCartoon.eps}}}</code>).</li>
 </ul>
 <p>If we go back to <code>thesis.tex</code> and scroll down to just after the <code>\mainmatter</code> call, then we can see our Introduction chapter included: <code>\include{Introduction/Introduction.tex}</code>. If we wanted to add another chapter, we could make a new folder called, for example <code>Chapter 2</code> and put a <code>Chapter2.tex</code> file in the folder. If we wanted, we could also add a folder for figures: <code>Chapter2Figs</code>. We could then add the following to <code>Chapter2.tex</code>:</p>
-<div class="language-LaTeX highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c">%=== Chapter Two ===</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">\chapter</span><span class="nb">{</span>Chapter 2: Electric Boogaloo<span class="nb">}</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>Chapter2/Chapter2Figs/<span class="nb">}}</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">\section</span><span class="nb">{</span>More Science<span class="nb">}</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a> blah blah blah blah
+<div class="language-LaTeX highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c">%=== Chapter Two ===</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">\chapter</span><span class="nb">{</span>Chapter 2: Electric Boogaloo<span class="nb">}</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">\graphicspath</span><span class="nb">{{</span>Chapter2/Chapter2Figs/<span class="nb">}}</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="k">\section</span><span class="nb">{</span>More Science<span class="nb">}</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a> blah blah blah blah
 </span></code></pre></div>
 <p>and add it to our thesis by including it in <code>thesis.tex</code>, by writing the line <code>\include{Chapter2/Chapter2.tex}</code> under the include statement for the first chapter.</p>
 <h2 id="new-thesis-template">New Thesis Template</h2>
@@ -1240,7 +1293,7 @@
 <li>Download <a href="https://miktex.org/download">MikTek</a> and install it as a user (you don't need admin rights or AppsAnywhere or permission from the king). At some point it will give you a choice whether you want to 'Install missing packages on-the-fly' or not; for the most 'Overleaf-like' experience, I would say 'yes'. </li>
 <li>
 <p>Open PowerShell and change directory, <code>cd</code>, to a folder containing the document you want to compile. As an example, let's go to a thesis folder: </p>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">cd </span><span class="s2">&quot;C:\Users\YourUsername\Thesis&quot;</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">cd </span><span class="s2">&quot;C:\Users\YourUsername\Thesis&quot;</span>
 </span></code></pre></div>
 </li>
 <li>
@@ -1251,7 +1304,7 @@
 <li>run <code>pdflatex</code> two more times to sort internal references and to link the biliography properly. </li>
 </ul>
 <p>In one line (assuminig our <code>.tex</code> file is called <code>thesis.tex</code>): </p>
-<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">pdflatex</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">thesis</span><span class="p">.</span><span class="n">tex</span> <span class="p">&amp;&amp;</span> <span class="n">bibtex</span><span class="p">.</span><span class="n">exe</span> <span class="n">thesis</span><span class="p">.</span><span class="n">aux</span> <span class="p">&amp;&amp;</span> <span class="n">pdflatex</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">thesis</span><span class="p">.</span><span class="n">tex</span> <span class="p">&amp;&amp;</span> <span class="n">pdflatex</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">thesis</span><span class="p">.</span><span class="n">tex</span>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">pdflatex</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">thesis</span><span class="p">.</span><span class="n">tex</span> <span class="p">&amp;&amp;</span> <span class="n">bibtex</span><span class="p">.</span><span class="n">exe</span> <span class="n">thesis</span><span class="p">.</span><span class="n">aux</span> <span class="p">&amp;&amp;</span> <span class="n">pdflatex</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">thesis</span><span class="p">.</span><span class="n">tex</span> <span class="p">&amp;&amp;</span> <span class="n">pdflatex</span><span class="p">.</span><span class="n">exe</span> <span class="p">.\</span><span class="n">thesis</span><span class="p">.</span><span class="n">tex</span>
 </span></code></pre></div>
 </li>
 </ol>
